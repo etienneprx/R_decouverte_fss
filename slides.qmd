@@ -48,6 +48,28 @@ Cette activité vise à présenter les langages de programmation comme outils d'
 
 ---
 
+## Avant de commencer... {.smaller background-color="#2C5F77"}
+
+::: {style="color: white;"}
+
+**Levez la main si...**
+
+<br>
+
+- Vous avez des données à analyser dans le cadre de votre projet, mais vous ne savez pas encore quel outil utiliser?
+
+<br>
+
+- Vous avez déjà entendu parler de R, mais vous n'êtes pas certain·e si c'est pour vous?
+
+<br>
+
+- Vous utilisez déjà Excel ou SPSS et vous vous demandez s'il existe mieux?
+
+:::
+
+---
+
 ## Cette situation vous est familière ? {.smaller}
 
 ::: {.columns}
@@ -58,6 +80,29 @@ Cette activité vise à présenter les langages de programmation comme outils d'
 ::: {.column width="40%"}
 ![](images/1-discouraged-worker.jpg){width="100%"}
 :::
+:::
+
+---
+
+## Et si on vous disait... {.smaller background-color="#4A90A4"}
+
+::: {style="color: white; text-align: center;"}
+
+<br>
+
+### Qu'il existe un outil qui peut :
+
+<br>
+
+- Automatiser vos analyses répétitives
+- Gérer des fichiers de données volumineux sans planter
+- Produire des graphiques de qualité publication
+- Rendre votre travail 100% reproductible
+
+<br>
+
+### Cet outil, c'est **R**.
+
 :::
 
 ---
@@ -89,6 +134,29 @@ Cette activité vise à présenter les langages de programmation comme outils d'
 <br>
 
 > R est un **langage de programmation statistique**, pas juste un logiciel avec des menus.
+
+---
+
+## Mais attendez... R ou Stata ? {.smaller background-color="#2C5F77"}
+
+::: {style="color: white;"}
+
+**C'est probablement LA question que vous vous posez.**
+
+<br>
+
+| | **R** | **Stata** |
+|---|---|---|
+| **Nature** | Langage de programmation | Logiciel statistique |
+| **Coût** | Gratuit et open-source | Licence payante |
+| **Courbe d'apprentissage** | Plus abrupte au début | Plus accessible pour débuter |
+| **Flexibilité** | Très flexible et extensible | Plus standardisé |
+
+<br>
+
+On va explorer ça plus en détail, mais d'abord... voyons ce que R peut faire concrètement.
+
+:::
 
 ---
 
@@ -176,7 +244,22 @@ Vous apprenez la logique **une fois**, puis vous l'appliquez à tous vos projets
 
 ## Exemple 2 : Données qualitatives {.smaller}
 
+**Un préjugé courant :** "R, c'est juste pour les stats et les chiffres."
+
+**La réalité :** R permet aussi d'analyser des données textuelles issues d'entretiens, de documents ou de réponses ouvertes.
+
+::: {.callout-note}
+## Précision importante
+On parle ici d'**analyser des données qualitatives avec R** (fouille de texte, comptage, visualisation) — ce qui est différent de l'**analyse qualitative** au sens méthodologique (interprétation, théorisation ancrée, etc.). R est un outil qui peut *soutenir* votre démarche, pas la remplacer.
+:::
+
+---
+
+## Exemple 2 : Données qualitatives {.smaller}
+
 **Situation :** Vous avez 30 entretiens semi-dirigés à analyser.
+
+**Objectif :** Identifier les thèmes récurrents et comparer leur fréquence entre participants.
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -215,7 +298,7 @@ entretiens %>%
 
 ## Exemple 2 : Analyse de contenu avec R {.smaller}
 
-**R peut aller beaucoup plus loin dans l'analyse qualitative**
+**R peut aller beaucoup plus loin dans l'analyse de données textuelles**
 
 ```r
 # Exemple : Extraire les mots les plus fréquents par thème
@@ -228,7 +311,7 @@ entretiens %>%
 ```
 
 ::: {.callout-note}
-## Ce que R permet en analyse qualitative
+## Ce que R permet avec les données textuelles
 - Analyse de sentiment automatisée
 - Détection de cooccurrences (quels mots apparaissent ensemble?)
 - Visualisation des thèmes et de leurs relations
@@ -238,26 +321,70 @@ entretiens %>%
 
 ---
 
-## Pourquoi R en sciences sociales ? {.smaller background-color="#2C5F77"}
+## Pause réflexion {.smaller background-color="#5B4E77"}
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1024px-R_logo.svg.png){.absolute top=0 left=900 width="20%"}
+::: {style="color: white; text-align: center;"}
+
+<br>
+
+### Pensez à votre projet de recherche actuel ou à venir.
+
+<br>
+
+- Quel type de données allez-vous analyser?
+
+<br>
+
+- Qu'est-ce qui vous prend (ou vous prendrait) le plus de temps?
+
+<br>
+
+- Est-ce que certains des exemples qu'on vient de voir pourraient vous être utiles?
+
+<br>
+
+:::
+
+---
+
+## Des questions jusqu'ici ? {.smaller background-color="#4A90A4"}
+
+::: {style="color: white; text-align: center;"}
+
+<br>
+
+### C'est le moment de poser vos questions sur :
+
+<br>
+
+- Ce qu'on a vu jusqu'à maintenant
+- Comment R pourrait s'appliquer à votre situation
+- Les différences avec les outils que vous connaissez
+
+<br>
+
+:::
+
+---
+
+## Voyons maintenant R en action {.smaller background-color="#2C5F77"}
 
 ::: {style="color: white;"}
 
-**R est utilisé dans la vraie vie :**
+**R est utilisé par des organisations reconnues :**
 
 ::: {.columns}
 ::: {.column width="50%"}
-**Organisations :**
+**À l'international :**
 
-- [New York Times](https://www.r-bloggers.com/2015/10/amanda-cox-on-using-r-at-the-nyt/) 
-- [BBC](https://bbc.github.io/rcookbook/)
-- Google, Facebook, Amazon et plusieurs autres
+- [New York Times](https://www.r-bloggers.com/2015/10/amanda-cox-on-using-r-at-the-nyt/) - visualisations journalistiques
+- [BBC](https://bbc.github.io/rcookbook/) - graphiques pour le web
+- Google, Facebook, Amazon - data science
 
 :::
 
 ::: {.column width="50%"}
-**Recherche au Québec :**
+**Au Québec :**
 
 - [Vox Pop Labs](https://github.com/voxpoplabs) (Boussole électorale)
 - CLESSN (Université Laval)
@@ -280,38 +407,7 @@ entretiens %>%
 ![](https://github.com/clessn/agregateur_data/blob/main/img/daily_gif_fr.gif?raw=true){fig-align="center" width="80%"}
 
 ::: {.callout-note}
-Animation générée automatiquement chaque jour avec R - Centre d'analyse des politiques publiques
-:::
-
----
-
-## Au-delà des chiffres {.smaller background-color="#2C5F77"}
-
-::: {style="color: white;"}
-
-**R s'adapte à tous types de données**
-
-::: {.columns}
-::: {.column width="50%"}
-**Texte :**
-
-- Analyse de sentiment
-- Classification de documents
-- Transcription audio
-- Extraction d'informations
-
-:::
-
-::: {.column width="50%"}
-**Multimédia :**
-
-- Analyse d'images
-- Création de vidéos
-- Infographies automatisées
-- Présentations interactives
-
-:::
-:::
+Animation générée automatiquement chaque jour avec R - CLESSN, Université Laval
 :::
 
 ---
@@ -320,7 +416,7 @@ Animation générée automatiquement chaque jour avec R - Centre d'analyse des p
 
 ::: {style="color: white;"}
 
-**Explorez vos données de manière interactive**
+**Transformez vos analyses en outils accessibles à tous**
 
 :::
 
@@ -328,6 +424,95 @@ Animation générée automatiquement chaque jour avec R - Centre d'analyse des p
 
 ::: {.callout-tip}
 Cliquez sur l'image pour voir l'[application en action](https://nz-stefan.shinyapps.io/commute-explorer-2/)
+:::
+
+---
+
+## Au-delà des chiffres et du texte {.smaller background-color="#2C5F77"}
+
+::: {style="color: white;"}
+
+**R s'adapte à tous types de données**
+
+::: {.columns}
+::: {.column width="50%"}
+**Ce qu'on peut analyser :**
+
+- Données de sondage
+- Textes et documents
+- Données spatiales (cartes)
+- Réseaux sociaux
+- Images et vidéos
+
+:::
+
+::: {.column width="50%"}
+**Ce qu'on peut produire :**
+
+- Graphiques de qualité publication
+- Tableaux de bord interactifs
+- Rapports automatisés
+- Présentations (comme celle-ci!)
+- Applications web
+
+:::
+:::
+:::
+
+---
+
+## Revenons à R vs Stata {.smaller background-color="#4A90A4"}
+
+::: {style="color: #333;"}
+
+**Maintenant que vous avez vu ce que R peut faire...**
+
+::: {.columns}
+::: {.column width="50%"}
+**Avantages de R :**
+
+- Plus de 21,000 packages spécialisés
+- Peut gérer plusieurs jeux de données simultanément
+- Meilleurs outils graphiques (ggplot2)
+- Connexion facile aux bases de données, APIs, web
+- Compétence très recherchée hors académie
+- Gratuit!
+
+:::
+
+::: {.column width="50%"}
+**Avantages de Stata :**
+
+- Fonctionnalités statistiques prêtes à l'emploi
+- Syntaxe plus intuitive pour les débutants
+- Documentation officielle très claire
+- Très répandu en économie et sciences sociales
+- Bon choix si temps limité pour apprendre
+
+:::
+:::
+
+:::
+
+---
+
+## Alors, R ou Stata ? {.smaller background-color="#5B4E77"}
+
+::: {style="color: white;"}
+
+**Choisir selon vos besoins :**
+
+| **Choisir R si...** | **Choisir Stata si...** |
+|---|---|
+| Vous voulez une carrière hors académie | Votre équipe utilise déjà Stata |
+| Vous avez besoin de visualisations avancées | Vous faites des analyses économétriques classiques |
+| Vous travaillez avec des données variées (texte, web, etc.) | Vous avez peu de temps pour apprendre |
+| Vous voulez des analyses 100% reproductibles | Vous préférez une interface plus guidée |
+
+::: {.callout-tip}
+**Notre recommandation :** Apprenez R, mais gardez des notions de Stata pour la collaboration!
+:::
+
 :::
 
 ---
@@ -361,115 +546,25 @@ Les concepts appris en R se transfèrent facilement :
 :::
 
 ::: {.callout-note}
-Une fois qu'on maîtrise un langage de programmation, les autres deviennent beaucoup plus faciles à apprendre
+Une fois qu'on maîtrise un langage de programmation, les autres deviennent beaucoup plus faciles à apprendre.
 :::
 :::
 
 ---
 
-## R vs Stata : quelle différence ? {.smaller background-color="#2C5F77"}
+## Concrètement, ça ressemble à quoi ? {.smaller background-color="#4A90A4"}
 
-::: {style="color: white;"}
+::: {style="color: white; text-align: center;"}
 
-**Deux philosophies différentes**
+<br>
 
-| | **R** | **Stata** |
-|---|---|---|
-| **Nature** | Langage de programmation | Logiciel statistique |
-| **Coût** | Gratuit et open-source | Licence payante |
-| **Courbe d'apprentissage** | Plus abrupte au début | Plus accessible pour débuter |
-| **Flexibilité** | Très flexible et extensible | Plus standardisé |
+### Voyons rapidement à quoi ressemble R en pratique.
 
-:::
+<br>
 
----
+(Pas de panique, on ne va pas coder aujourd'hui!)
 
-## Avantages de R {.smaller background-color="#4A90A4"}
-
-::: {style="color: #333;"}
-
-::: {.columns}
-::: {.column width="50%"}
-**Puissance et flexibilité :**
-
-- Plus de 21,000 packages spécialisés
-- Peut gérer plusieurs jeux de données simultanément
-- Meilleurs outils graphiques (ggplot2)
-- Connexion facile aux bases de données, APIs, web scraping
-
-:::
-
-::: {.column width="50%"}
-**Carrière et communauté :**
-
-- Compétence très recherchée hors académie
-- Énorme documentation en ligne
-- Nouvelles méthodes publiées d'abord en R
-- Transition facile vers Python et autres langages
-
-:::
-:::
-
-::: {.callout-tip}
-## À retenir
-R est un **investissement** : la courbe d'apprentissage est plus raide, mais les possibilités sont beaucoup plus vastes.
-:::
-
-:::
-
----
-
-## Avantages de Stata {.smaller background-color="#4A90A4"}
-
-::: {style="color: #333;"}
-
-::: {.columns}
-::: {.column width="50%"}
-**Facilité d'utilisation :**
-
-- Fonctionnalités statistiques prêtes à l'emploi
-- Syntaxe plus intuitive pour les débutants
-- Documentation officielle très claire
-- Erreurs standard robustes en un clic
-
-:::
-
-::: {.column width="50%"}
-**Contexte d'utilisation :**
-
-- Très répandu en sciences sociales et économie
-- Utilisé dans les agences gouvernementales
-- Bon choix si temps limité pour apprendre
-- Collaboration avec chercheurs qui l'utilisent
-
-:::
-:::
-
-::: {.callout-note}
-## À retenir
-Stata est excellent pour des analyses statistiques classiques quand on veut des résultats rapidement sans programmation complexe.
-:::
-
-:::
-
----
-
-## Alors, R ou Stata ? {.smaller background-color="#5B4E77"}
-
-::: {style="color: white;"}
-
-**Choisir selon vos besoins :**
-
-| **Choisir R si...** | **Choisir Stata si...** |
-|---|---|
-| Vous voulez une carrière hors académie | Votre équipe utilise déjà Stata |
-| Vous avez besoin de visualisations avancées | Vous faites des analyses économétriques classiques |
-| Vous travaillez avec des données variées (texte, web, etc.) | Vous avez peu de temps pour apprendre |
-| Vous voulez des analyses 100% reproductibles | Vous préférez une interface plus guidée |
-
-::: {.callout-tip}
-**Notre recommandation :** Apprenez R, mais gardez des notions de Stata pour la collaboration !
-:::
+<br>
 
 :::
 
@@ -482,10 +577,10 @@ Stata est excellent pour des analyses statistiques classiques quand on veut des 
 **Quelle est la différence ?**
 
 - R est le moteur, RStudio est le véhicule
-- R est le langage, RStudio est la feuille de papier
+- R est le langage, RStudio est l'interface
 - RStudio facilite l'utilisation de R
-- RStudio est un IDE (Integrated Development Environment)
-- Personnalisation de l'environnement de travail
+- C'est gratuit, les deux!
+
 :::
 
 ::: {.column width="50%"}
@@ -493,6 +588,8 @@ Stata est excellent pour des analyses statistiques classiques quand on veut des 
 
 - [Installer R](https://cran.r-project.org/)
 - [Installer RStudio](https://www.rstudio.com/products/rstudio/download/)
+
+*(On vous guidera pour l'installation avant la formation Initiation)*
 :::
 :::
 
@@ -527,7 +624,7 @@ Fichiers et graphiques
 ## R comme calculatrice {.smaller}
 
 ::: {.callout-tip}
-## Démonstration
+## Démonstration rapide
 :::
 
 ```{r}
@@ -560,7 +657,7 @@ note_imdb
 ```
 
 ::: {.callout-note}
-**Important :** Les objets apparaissent dans le panneau Environment de RStudio !
+**Important :** Les objets apparaissent dans le panneau Environment de RStudio!
 :::
 
 ---
@@ -576,8 +673,8 @@ note_imdb
 
 ::: {.callout-tip}
 ## Analogie
-R de base = téléphone vide
-Packages = applications qu'on télécharge
+R de base = téléphone neuf
+Packages = applications qu'on télécharge selon nos besoins
 :::
 
 ---
@@ -605,7 +702,7 @@ ggplot(donnees, aes(x = categorie, y = valeur, fill = categorie)) +
 
 ---
 
-## Ce qu'on peut faire avec R {.smaller}
+## Ce qu'on verra dans les formations suivantes {.smaller}
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -614,7 +711,7 @@ ggplot(donnees, aes(x = categorie, y = valeur, fill = categorie)) +
 - Statistiques descriptives
 - Régressions (linéaire, logistique, etc.)
 - Analyses factorielles
-- Modèles multiniveaux
+- Moyenne, écart-type, variance
 
 :::
 
@@ -622,9 +719,9 @@ ggplot(donnees, aes(x = categorie, y = valeur, fill = categorie)) +
 **Analyses qualitatives :**
 
 - Analyse de contenu textuel
+- Nuages de mots
 - Analyse de sentiment
-- Classification de documents
-- Visualisation de réseaux
+- Visualisation de thèmes
 
 :::
 :::
@@ -633,7 +730,7 @@ ggplot(donnees, aes(x = categorie, y = valeur, fill = categorie)) +
 
 ::: {.callout-note}
 ## Et bien plus encore...
-Rapports automatisés, tableaux de bord interactifs, cartes géographiques, machine learning...
+Rapports automatisés, tableaux de bord interactifs, cartes géographiques...
 :::
 
 ---
@@ -735,7 +832,7 @@ En présence uniquement. Venez avec :
 
 - [swirl](https://swirlstats.com/) - apprendre R dans R
 - [R for Data Science](https://r4ds.hadley.nz/) (gratuit en ligne)
-- ChatGPT pour déboguer vos erreurs !
+- ChatGPT pour déboguer vos erreurs!
 
 **Communauté :**
 
@@ -744,10 +841,12 @@ En présence uniquement. Venez avec :
 
 ---
 
-## Questions ? {.smaller}
+## Questions ? {.smaller background-color="#2C5F77"}
+
+::: {style="color: white;"}
 
 ::: {.callout-tip appearance="simple"}
-## Merci pour votre attention !
+## Merci pour votre attention!
 
 **Contact :** etienne.proulx.2@ulaval.ca
 
@@ -755,6 +854,8 @@ En présence uniquement. Venez avec :
 
 **Prochaines étapes :**
 
-- Installez R et RStudio sur votre ordinateur
-- Inscrivez-vous aux formations Initiation et Approfondissement
-- Explorez les ressources en ligne
+- Inscrivez-vous aux formations Initiation (11 mars) et Approfondissement (20 mars)
+- On vous enverra les instructions pour installer R et RStudio avant la formation
+- Explorez les ressources en ligne si vous êtes curieux!
+
+:::

@@ -426,6 +426,24 @@
 </div>
 </div>
 </section>
+<section id="avant-de-commencer" class="slide level2 smaller" data-background-color="#2C5F77">
+<h2>Avant de commencer…</h2>
+<div style="color: white;">
+<p><strong>Levez la main si…</strong></p>
+<p><br></p>
+<ul>
+<li>Vous avez des données à analyser dans le cadre de votre projet, mais vous ne savez pas encore quel outil utiliser?</li>
+</ul>
+<p><br></p>
+<ul>
+<li>Vous avez déjà entendu parler de R, mais vous n’êtes pas certain·e si c’est pour vous?</li>
+</ul>
+<p><br></p>
+<ul>
+<li>Vous utilisez déjà Excel ou SPSS et vous vous demandez s’il existe mieux?</li>
+</ul>
+</div>
+</section>
 <section id="cette-situation-vous-est-familière" class="slide level2 smaller">
 <h2>Cette situation vous est familière ?</h2>
 <div class="columns">
@@ -434,6 +452,22 @@
 </div><div class="column" style="width:40%;">
 <p><img data-src="images/1-discouraged-worker.jpg" style="width:100.0%"></p>
 </div></div>
+</section>
+<section id="et-si-on-vous-disait" class="slide level2 smaller" data-background-color="#4A90A4">
+<h2>Et si on vous disait…</h2>
+<div style="color: white; text-align: center;">
+<p><br></p>
+<h3 id="quil-existe-un-outil-qui-peut">Qu’il existe un outil qui peut :</h3>
+<p><br></p>
+<ul>
+<li>Automatiser vos analyses répétitives</li>
+<li>Gérer des fichiers de données volumineux sans planter</li>
+<li>Produire des graphiques de qualité publication</li>
+<li>Rendre votre travail 100% reproductible</li>
+</ul>
+<p><br></p>
+<h3 id="cet-outil-cest-r.">Cet outil, c’est <strong>R</strong>.</h3>
+</div>
 </section>
 <section id="quest-ce-que-r" class="slide level2 smaller">
 <h2>Qu’est-ce que R ?</h2>
@@ -459,6 +493,51 @@
 <blockquote>
 <p>R est un <strong>langage de programmation statistique</strong>, pas juste un logiciel avec des menus.</p>
 </blockquote>
+</section>
+<section id="mais-attendez-r-ou-stata" class="slide level2 smaller" data-background-color="#2C5F77">
+<h2>Mais attendez… R ou Stata ?</h2>
+<div style="color: white;">
+<p><strong>C’est probablement LA question que vous vous posez.</strong></p>
+<p><br></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>R</strong></th>
+<th><strong>Stata</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Nature</strong></td>
+<td>Langage de programmation</td>
+<td>Logiciel statistique</td>
+</tr>
+<tr class="even">
+<td><strong>Coût</strong></td>
+<td>Gratuit et open-source</td>
+<td>Licence payante</td>
+</tr>
+<tr class="odd">
+<td><strong>Courbe d’apprentissage</strong></td>
+<td>Plus abrupte au début</td>
+<td>Plus accessible pour débuter</td>
+</tr>
+<tr class="even">
+<td><strong>Flexibilité</strong></td>
+<td>Très flexible et extensible</td>
+<td>Plus standardisé</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>On va explorer ça plus en détail, mais d’abord… voyons ce que R peut faire concrètement.</p>
+</div>
 </section>
 <section id="exemple-1-données-quantitatives" class="slide level2 smaller">
 <h2>Exemple 1 : Données quantitatives</h2>
@@ -527,7 +606,26 @@
 </section>
 <section id="exemple-2-données-qualitatives" class="slide level2 smaller">
 <h2>Exemple 2 : Données qualitatives</h2>
+<p><strong>Un préjugé courant :</strong> “R, c’est juste pour les stats et les chiffres.”</p>
+<p><strong>La réalité :</strong> R permet aussi d’analyser des données textuelles issues d’entretiens, de documents ou de réponses ouvertes.</p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Précision importante</strong></p>
+</div>
+<div class="callout-content">
+<p>On parle ici d’<strong>analyser des données qualitatives avec R</strong> (fouille de texte, comptage, visualisation) — ce qui est différent de l’<strong>analyse qualitative</strong> au sens méthodologique (interprétation, théorisation ancrée, etc.). R est un outil qui peut <em>soutenir</em> votre démarche, pas la remplacer.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="exemple-2-données-qualitatives-1" class="slide level2 smaller">
+<h2>Exemple 2 : Données qualitatives</h2>
 <p><strong>Situation :</strong> Vous avez 30 entretiens semi-dirigés à analyser.</p>
+<p><strong>Objectif :</strong> Identifier les thèmes récurrents et comparer leur fréquence entre participants.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Approche traditionnelle :</strong></p>
@@ -556,7 +654,7 @@
 </section>
 <section id="exemple-2-analyse-de-contenu-avec-r" class="slide level2 smaller">
 <h2>Exemple 2 : Analyse de contenu avec R</h2>
-<p><strong>R peut aller beaucoup plus loin dans l’analyse qualitative</strong></p>
+<p><strong>R peut aller beaucoup plus loin dans l’analyse de données textuelles</strong></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="co"># Exemple : Extraire les mots les plus fréquents par thème</span></span>
 <span id="cb5-2"><a></a>entretiens <span class="sc">%&gt;%</span></span>
 <span id="cb5-3"><a></a>  <span class="fu">unnest_tokens</span>(mot, texte) <span class="sc">%&gt;%</span>           <span class="co"># Séparer chaque mot</span></span>
@@ -570,7 +668,7 @@
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Ce que R permet en analyse qualitative</strong></p>
+<p><strong>Ce que R permet avec les données textuelles</strong></p>
 </div>
 <div class="callout-content">
 <ul>
@@ -584,21 +682,54 @@
 </div>
 </div>
 </section>
-<section id="pourquoi-r-en-sciences-sociales" class="slide level2 smaller" data-background-color="#2C5F77">
-<h2>Pourquoi R en sciences sociales ?</h2>
-<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1024px-R_logo.svg.png" class="absolute" style="top: 0px; left: 900px; width: 20%; "></p>
+<section id="pause-réflexion" class="slide level2 smaller" data-background-color="#5B4E77">
+<h2>Pause réflexion</h2>
+<div style="color: white; text-align: center;">
+<p><br></p>
+<h3 id="pensez-à-votre-projet-de-recherche-actuel-ou-à-venir.">Pensez à votre projet de recherche actuel ou à venir.</h3>
+<p><br></p>
+<ul>
+<li>Quel type de données allez-vous analyser?</li>
+</ul>
+<p><br></p>
+<ul>
+<li>Qu’est-ce qui vous prend (ou vous prendrait) le plus de temps?</li>
+</ul>
+<p><br></p>
+<ul>
+<li>Est-ce que certains des exemples qu’on vient de voir pourraient vous être utiles?</li>
+</ul>
+<p><br></p>
+</div>
+</section>
+<section id="des-questions-jusquici" class="slide level2 smaller" data-background-color="#4A90A4">
+<h2>Des questions jusqu’ici ?</h2>
+<div style="color: white; text-align: center;">
+<p><br></p>
+<h3 id="cest-le-moment-de-poser-vos-questions-sur">C’est le moment de poser vos questions sur :</h3>
+<p><br></p>
+<ul>
+<li>Ce qu’on a vu jusqu’à maintenant</li>
+<li>Comment R pourrait s’appliquer à votre situation</li>
+<li>Les différences avec les outils que vous connaissez</li>
+</ul>
+<p><br></p>
+</div>
+</section>
+<section id="voyons-maintenant-r-en-action" class="slide level2 smaller" data-background-color="#2C5F77">
+<h2>Voyons maintenant R en action</h2>
 <div style="color: white;">
-<p><strong>R est utilisé dans la vraie vie :</strong></p>
+<p><strong>R est utilisé par des organisations reconnues :</strong></p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Organisations :</strong></p>
+<p><strong>À l’international :</strong></p>
 <ul>
-<li><a href="https://www.r-bloggers.com/2015/10/amanda-cox-on-using-r-at-the-nyt/">New York Times</a></li>
-<li><a href="https://bbc.github.io/rcookbook/">BBC</a></li>
-<li>Google, Facebook, Amazon et plusieurs autres</li>
+<li><a href="https://www.r-bloggers.com/2015/10/amanda-cox-on-using-r-at-the-nyt/">New York Times</a> - visualisations journalistiques</li>
+<li><a href="https://bbc.github.io/rcookbook/">BBC</a> - graphiques pour le web</li>
+<li>Google, Facebook, Amazon - data science</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<p><strong>Recherche au Québec :</strong></p>
+<p><strong>Au Québec :</strong></p>
 <ul>
 <li><a href="https://github.com/voxpoplabs">Vox Pop Labs</a> (Boussole électorale)</li>
 <li>CLESSN (Université Laval)</li>
@@ -622,39 +753,15 @@
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>Animation générée automatiquement chaque jour avec R - Centre d’analyse des politiques publiques</p>
+<p>Animation générée automatiquement chaque jour avec R - CLESSN, Université Laval</p>
 </div>
 </div>
-</div>
-</section>
-<section id="au-delà-des-chiffres" class="slide level2 smaller" data-background-color="#2C5F77">
-<h2>Au-delà des chiffres</h2>
-<div style="color: white;">
-<p><strong>R s’adapte à tous types de données</strong></p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Texte :</strong></p>
-<ul>
-<li>Analyse de sentiment</li>
-<li>Classification de documents</li>
-<li>Transcription audio</li>
-<li>Extraction d’informations</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p><strong>Multimédia :</strong></p>
-<ul>
-<li>Analyse d’images</li>
-<li>Création de vidéos</li>
-<li>Infographies automatisées</li>
-<li>Présentations interactives</li>
-</ul>
-</div></div>
 </div>
 </section>
 <section id="applications-web-interactives-avec-shiny" class="slide level2 smaller" data-background-color="#4A90A4">
 <h2>Applications web interactives avec Shiny</h2>
 <div style="color: white;">
-<p><strong>Explorez vos données de manière interactive</strong></p>
+<p><strong>Transformez vos analyses en outils accessibles à tous</strong></p>
 </div>
 <p><a href="https://nz-stefan.shinyapps.io/commute-explorer-2/"><img data-src="images/shiny.png" style="width:80.0%"></a></p>
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -671,154 +778,57 @@
 </div>
 </div>
 </section>
-<section id="et-après-r" class="slide level2 smaller" data-background-color="#2C5F77">
-<h2>Et après R ?</h2>
+<section id="au-delà-des-chiffres-et-du-texte" class="slide level2 smaller" data-background-color="#2C5F77">
+<h2>Au-delà des chiffres et du texte</h2>
 <div style="color: white;">
-<p><strong>Apprendre R ouvre la porte à d’autres langages</strong></p>
-<p>Les concepts appris en R se transfèrent facilement :</p>
+<p><strong>R s’adapte à tous types de données</strong></p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Analyse de données :</strong></p>
+<p><strong>Ce qu’on peut analyser :</strong></p>
 <ul>
-<li>Python (data science)</li>
-<li>Julia (calcul scientifique)</li>
-<li>SQL (bases de données)</li>
+<li>Données de sondage</li>
+<li>Textes et documents</li>
+<li>Données spatiales (cartes)</li>
+<li>Réseaux sociaux</li>
+<li>Images et vidéos</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<p><strong>Développement :</strong></p>
+<p><strong>Ce qu’on peut produire :</strong></p>
 <ul>
-<li>JavaScript (web interactif)</li>
-<li>HTML/CSS (présentation)</li>
-<li>Bash (automatisation)</li>
+<li>Graphiques de qualité publication</li>
+<li>Tableaux de bord interactifs</li>
+<li>Rapports automatisés</li>
+<li>Présentations (comme celle-ci!)</li>
+<li>Applications web</li>
 </ul>
 </div></div>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p>Une fois qu’on maîtrise un langage de programmation, les autres deviennent beaucoup plus faciles à apprendre</p>
-</div>
-</div>
-</div>
 </div>
 </section>
-<section id="r-vs-stata-quelle-différence" class="slide level2 smaller" data-background-color="#2C5F77">
-<h2>R vs Stata : quelle différence ?</h2>
-<div style="color: white;">
-<p><strong>Deux philosophies différentes</strong></p>
-<table class="caption-top">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th><strong>R</strong></th>
-<th><strong>Stata</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Nature</strong></td>
-<td>Langage de programmation</td>
-<td>Logiciel statistique</td>
-</tr>
-<tr class="even">
-<td><strong>Coût</strong></td>
-<td>Gratuit et open-source</td>
-<td>Licence payante</td>
-</tr>
-<tr class="odd">
-<td><strong>Courbe d’apprentissage</strong></td>
-<td>Plus abrupte au début</td>
-<td>Plus accessible pour débuter</td>
-</tr>
-<tr class="even">
-<td><strong>Flexibilité</strong></td>
-<td>Très flexible et extensible</td>
-<td>Plus standardisé</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="avantages-de-r" class="slide level2 smaller" data-background-color="#4A90A4">
-<h2>Avantages de R</h2>
+<section id="revenons-à-r-vs-stata" class="slide level2 smaller" data-background-color="#4A90A4">
+<h2>Revenons à R vs Stata</h2>
 <div style="color: #333;">
+<p><strong>Maintenant que vous avez vu ce que R peut faire…</strong></p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Puissance et flexibilité :</strong></p>
+<p><strong>Avantages de R :</strong></p>
 <ul>
 <li>Plus de 21,000 packages spécialisés</li>
 <li>Peut gérer plusieurs jeux de données simultanément</li>
 <li>Meilleurs outils graphiques (ggplot2)</li>
-<li>Connexion facile aux bases de données, APIs, web scraping</li>
+<li>Connexion facile aux bases de données, APIs, web</li>
+<li>Compétence très recherchée hors académie</li>
+<li>Gratuit!</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<p><strong>Carrière et communauté :</strong></p>
-<ul>
-<li>Compétence très recherchée hors académie</li>
-<li>Énorme documentation en ligne</li>
-<li>Nouvelles méthodes publiées d’abord en R</li>
-<li>Transition facile vers Python et autres langages</li>
-</ul>
-</div></div>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>À retenir</strong></p>
-</div>
-<div class="callout-content">
-<p>R est un <strong>investissement</strong> : la courbe d’apprentissage est plus raide, mais les possibilités sont beaucoup plus vastes.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="avantages-de-stata" class="slide level2 smaller" data-background-color="#4A90A4">
-<h2>Avantages de Stata</h2>
-<div style="color: #333;">
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Facilité d’utilisation :</strong></p>
+<p><strong>Avantages de Stata :</strong></p>
 <ul>
 <li>Fonctionnalités statistiques prêtes à l’emploi</li>
 <li>Syntaxe plus intuitive pour les débutants</li>
 <li>Documentation officielle très claire</li>
-<li>Erreurs standard robustes en un clic</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p><strong>Contexte d’utilisation :</strong></p>
-<ul>
-<li>Très répandu en sciences sociales et économie</li>
-<li>Utilisé dans les agences gouvernementales</li>
+<li>Très répandu en économie et sciences sociales</li>
 <li>Bon choix si temps limité pour apprendre</li>
-<li>Collaboration avec chercheurs qui l’utilisent</li>
 </ul>
 </div></div>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>À retenir</strong></p>
-</div>
-<div class="callout-content">
-<p>Stata est excellent pour des analyses statistiques classiques quand on veut des résultats rapidement sans programmation complexe.</p>
-</div>
-</div>
-</div>
 </div>
 </section>
 <section id="alors-r-ou-stata" class="slide level2 smaller" data-background-color="#5B4E77">
@@ -864,10 +874,56 @@
 <p><strong>Astuce</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>Notre recommandation :</strong> Apprenez R, mais gardez des notions de Stata pour la collaboration !</p>
+<p><strong>Notre recommandation :</strong> Apprenez R, mais gardez des notions de Stata pour la collaboration!</p>
 </div>
 </div>
 </div>
+</div>
+</section>
+<section id="et-après-r" class="slide level2 smaller" data-background-color="#2C5F77">
+<h2>Et après R ?</h2>
+<div style="color: white;">
+<p><strong>Apprendre R ouvre la porte à d’autres langages</strong></p>
+<p>Les concepts appris en R se transfèrent facilement :</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Analyse de données :</strong></p>
+<ul>
+<li>Python (data science)</li>
+<li>Julia (calcul scientifique)</li>
+<li>SQL (bases de données)</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Développement :</strong></p>
+<ul>
+<li>JavaScript (web interactif)</li>
+<li>HTML/CSS (présentation)</li>
+<li>Bash (automatisation)</li>
+</ul>
+</div></div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Une fois qu’on maîtrise un langage de programmation, les autres deviennent beaucoup plus faciles à apprendre.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="concrètement-ça-ressemble-à-quoi" class="slide level2 smaller" data-background-color="#4A90A4">
+<h2>Concrètement, ça ressemble à quoi ?</h2>
+<div style="color: white; text-align: center;">
+<p><br></p>
+<h3 id="voyons-rapidement-à-quoi-ressemble-r-en-pratique.">Voyons rapidement à quoi ressemble R en pratique.</h3>
+<p><br></p>
+<p>(Pas de panique, on ne va pas coder aujourd’hui!)</p>
+<p><br></p>
 </div>
 </section>
 <section id="installer-r-et-rstudio" class="slide level2 smaller">
@@ -877,10 +933,9 @@
 <p><strong>Quelle est la différence ?</strong></p>
 <ul>
 <li>R est le moteur, RStudio est le véhicule</li>
-<li>R est le langage, RStudio est la feuille de papier</li>
+<li>R est le langage, RStudio est l’interface</li>
 <li>RStudio facilite l’utilisation de R</li>
-<li>RStudio est un IDE (Integrated Development Environment)</li>
-<li>Personnalisation de l’environnement de travail</li>
+<li>C’est gratuit, les deux!</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><strong>Liens de téléchargement :</strong></p>
@@ -888,6 +943,7 @@
 <li><a href="https://cran.r-project.org/">Installer R</a></li>
 <li><a href="https://www.rstudio.com/products/rstudio/download/">Installer RStudio</a></li>
 </ul>
+<p><em>(On vous guidera pour l’installation avant la formation Initiation)</em></p>
 </div></div>
 </section>
 <section id="linterface-rstudio" class="slide level2 smaller">
@@ -914,7 +970,7 @@
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Démonstration</strong></p>
+<p><strong>Démonstration rapide</strong></p>
 </div>
 <div class="callout-content">
 
@@ -974,7 +1030,7 @@
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>Important :</strong> Les objets apparaissent dans le panneau Environment de RStudio !</p>
+<p><strong>Important :</strong> Les objets apparaissent dans le panneau Environment de RStudio!</p>
 </div>
 </div>
 </div>
@@ -997,7 +1053,7 @@
 <p><strong>Analogie</strong></p>
 </div>
 <div class="callout-content">
-<p>R de base = téléphone vide Packages = applications qu’on télécharge</p>
+<p>R de base = téléphone neuf Packages = applications qu’on télécharge selon nos besoins</p>
 </div>
 </div>
 </div>
@@ -1021,8 +1077,8 @@
 
 </div>
 <img data-src="slides_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="ce-quon-peut-faire-avec-r" class="slide level2 smaller">
-<h2>Ce qu’on peut faire avec R</h2>
+<section id="ce-quon-verra-dans-les-formations-suivantes" class="slide level2 smaller">
+<h2>Ce qu’on verra dans les formations suivantes</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Analyses quantitatives :</strong></p>
@@ -1030,15 +1086,15 @@
 <li>Statistiques descriptives</li>
 <li>Régressions (linéaire, logistique, etc.)</li>
 <li>Analyses factorielles</li>
-<li>Modèles multiniveaux</li>
+<li>Moyenne, écart-type, variance</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><strong>Analyses qualitatives :</strong></p>
 <ul>
 <li>Analyse de contenu textuel</li>
+<li>Nuages de mots</li>
 <li>Analyse de sentiment</li>
-<li>Classification de documents</li>
-<li>Visualisation de réseaux</li>
+<li>Visualisation de thèmes</li>
 </ul>
 </div></div>
 <p><br></p>
@@ -1051,7 +1107,7 @@
 <p><strong>Et bien plus encore…</strong></p>
 </div>
 <div class="callout-content">
-<p>Rapports automatisés, tableaux de bord interactifs, cartes géographiques, machine learning…</p>
+<p>Rapports automatisés, tableaux de bord interactifs, cartes géographiques…</p>
 </div>
 </div>
 </div>
@@ -1145,7 +1201,7 @@
 <ul>
 <li><a href="https://swirlstats.com/">swirl</a> - apprendre R dans R</li>
 <li><a href="https://r4ds.hadley.nz/">R for Data Science</a> (gratuit en ligne)</li>
-<li>ChatGPT pour déboguer vos erreurs !</li>
+<li>ChatGPT pour déboguer vos erreurs!</li>
 </ul>
 <p><strong>Communauté :</strong></p>
 <ul>
@@ -1153,15 +1209,16 @@
 <li><a href="https://community.rstudio.com/">RStudio Community</a></li>
 </ul>
 </section>
-<section id="questions" class="slide level2 smaller">
+<section id="questions" class="slide level2 smaller" data-background-color="#2C5F77">
 <h2>Questions ?</h2>
+<div style="color: white;">
 <div class="callout callout-tip callout-titled callout-style-simple">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Merci pour votre attention !</strong></p>
+<p><strong>Merci pour votre attention!</strong></p>
 </div>
 <div class="callout-content">
 <p><strong>Contact :</strong> etienne.proulx.2@ulaval.ca</p>
@@ -1170,10 +1227,11 @@
 </div>
 <p><strong>Prochaines étapes :</strong></p>
 <ul>
-<li>Installez R et RStudio sur votre ordinateur</li>
-<li>Inscrivez-vous aux formations Initiation et Approfondissement</li>
-<li>Explorez les ressources en ligne</li>
+<li>Inscrivez-vous aux formations Initiation (11 mars) et Approfondissement (20 mars)</li>
+<li>On vous enverra les instructions pour installer R et RStudio avant la formation</li>
+<li>Explorez les ressources en ligne si vous êtes curieux!</li>
 </ul>
+</div>
 
 <div class="quarto-auto-generated-content">
 <p><img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/90/Ulaval_Shield.svg/800px-Ulaval_Shield.svg.png" class="slide-logo"></p>

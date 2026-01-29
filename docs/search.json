@@ -91,6 +91,13 @@
     "text": "Objectifs de l’atelier\nCette activité vise à présenter les langages de programmation comme outils d’analyse, en mettant l’accent sur R et ses applications en sciences sociales.\n\n\n\n\n\n\nCe que nous allons aborder\n\n\n\nLes avantages des langages de programmation pour l’analyse de données\nUne introduction à R : contextes d’utilisation et principales fonctionnalités\nDes exemples d’applications en recherche en sciences sociales\nUn aperçu des formations Initiation et Approfondissement offertes par la suite"
   },
   {
+    "objectID": "slides.html#avant-de-commencer",
+    "href": "slides.html#avant-de-commencer",
+    "title": "Découverte du langage de programmation R",
+    "section": "Avant de commencer…",
+    "text": "Avant de commencer…\n\nLevez la main si…\n\n\nVous avez des données à analyser dans le cadre de votre projet, mais vous ne savez pas encore quel outil utiliser?\n\n\n\nVous avez déjà entendu parler de R, mais vous n’êtes pas certain·e si c’est pour vous?\n\n\n\nVous utilisez déjà Excel ou SPSS et vous vous demandez s’il existe mieux?"
+  },
+  {
     "objectID": "slides.html#cette-situation-vous-est-familière",
     "href": "slides.html#cette-situation-vous-est-familière",
     "title": "Découverte du langage de programmation R",
@@ -98,11 +105,25 @@
     "text": "Cette situation vous est familière ?"
   },
   {
+    "objectID": "slides.html#et-si-on-vous-disait",
+    "href": "slides.html#et-si-on-vous-disait",
+    "title": "Découverte du langage de programmation R",
+    "section": "Et si on vous disait…",
+    "text": "Et si on vous disait…\n\n\nQu’il existe un outil qui peut :\n\n\nAutomatiser vos analyses répétitives\nGérer des fichiers de données volumineux sans planter\nProduire des graphiques de qualité publication\nRendre votre travail 100% reproductible\n\n\nCet outil, c’est R."
+  },
+  {
     "objectID": "slides.html#quest-ce-que-r",
     "href": "slides.html#quest-ce-que-r",
     "title": "Découverte du langage de programmation R",
     "section": "Qu’est-ce que R ?",
     "text": "Qu’est-ce que R ?\n\n\nR c’est :\n\nUn langage de programmation pour l’analyse de données\nGratuit et open-source\nUne communauté active mondiale\nPlus de 21,000 packages spécialisés\n\n\nPourquoi l’utiliser ?\n\nAdapté aux sciences sociales\nAnalyses reproductibles et transparentes\nVisualisations de qualité professionnelle\nCompétence recherchée en recherche et industrie\n\n\n\n\nR est un langage de programmation statistique, pas juste un logiciel avec des menus."
+  },
+  {
+    "objectID": "slides.html#mais-attendez-r-ou-stata",
+    "href": "slides.html#mais-attendez-r-ou-stata",
+    "title": "Découverte du langage de programmation R",
+    "section": "Mais attendez… R ou Stata ?",
+    "text": "Mais attendez… R ou Stata ?\n\nC’est probablement LA question que vous vous posez.\n\n\n\n\n\n\n\n\n\n\nR\nStata\n\n\n\n\nNature\nLangage de programmation\nLogiciel statistique\n\n\nCoût\nGratuit et open-source\nLicence payante\n\n\nCourbe d’apprentissage\nPlus abrupte au début\nPlus accessible pour débuter\n\n\nFlexibilité\nTrès flexible et extensible\nPlus standardisé\n\n\n\n\nOn va explorer ça plus en détail, mais d’abord… voyons ce que R peut faire concrètement."
   },
   {
     "objectID": "slides.html#exemple-1-données-quantitatives",
@@ -123,84 +144,98 @@
     "href": "slides.html#exemple-2-données-qualitatives",
     "title": "Découverte du langage de programmation R",
     "section": "Exemple 2 : Données qualitatives",
-    "text": "Exemple 2 : Données qualitatives\nSituation : Vous avez 30 entretiens semi-dirigés à analyser.\n\n\nApproche traditionnelle :\n\nLire chaque entretien plusieurs fois\nSurligner manuellement les passages\nCompter les occurrences à la main\nDifficile de repérer des patterns subtils\nTrès chronophage\n\n\nAvec R :\n# Trouver tous les passages sur un thème\nentretiens %&gt;%\n  filter(str_detect(texte,\n    \"stress|anxiété|pression\"))\n\n# Compter les thèmes par participant\nentretiens %&gt;%\n  group_by(participant) %&gt;%\n  summarise(\n    nb_stress = sum(str_detect(texte, \"stress\")),\n    nb_positif = sum(str_detect(texte, \"satisf\"))\n  )"
+    "text": "Exemple 2 : Données qualitatives\nUn préjugé courant : “R, c’est juste pour les stats et les chiffres.”\nLa réalité : R permet aussi d’analyser des données textuelles issues d’entretiens, de documents ou de réponses ouvertes.\n\n\n\n\n\n\nPrécision importante\n\n\nOn parle ici d’analyser des données qualitatives avec R (fouille de texte, comptage, visualisation) — ce qui est différent de l’analyse qualitative au sens méthodologique (interprétation, théorisation ancrée, etc.). R est un outil qui peut soutenir votre démarche, pas la remplacer."
+  },
+  {
+    "objectID": "slides.html#exemple-2-données-qualitatives-1",
+    "href": "slides.html#exemple-2-données-qualitatives-1",
+    "title": "Découverte du langage de programmation R",
+    "section": "Exemple 2 : Données qualitatives",
+    "text": "Exemple 2 : Données qualitatives\nSituation : Vous avez 30 entretiens semi-dirigés à analyser.\nObjectif : Identifier les thèmes récurrents et comparer leur fréquence entre participants.\n\n\nApproche traditionnelle :\n\nLire chaque entretien plusieurs fois\nSurligner manuellement les passages\nCompter les occurrences à la main\nDifficile de repérer des patterns subtils\nTrès chronophage\n\n\nAvec R :\n# Trouver tous les passages sur un thème\nentretiens %&gt;%\n  filter(str_detect(texte,\n    \"stress|anxiété|pression\"))\n\n# Compter les thèmes par participant\nentretiens %&gt;%\n  group_by(participant) %&gt;%\n  summarise(\n    nb_stress = sum(str_detect(texte, \"stress\")),\n    nb_positif = sum(str_detect(texte, \"satisf\"))\n  )"
   },
   {
     "objectID": "slides.html#exemple-2-analyse-de-contenu-avec-r",
     "href": "slides.html#exemple-2-analyse-de-contenu-avec-r",
     "title": "Découverte du langage de programmation R",
     "section": "Exemple 2 : Analyse de contenu avec R",
-    "text": "Exemple 2 : Analyse de contenu avec R\nR peut aller beaucoup plus loin dans l’analyse qualitative\n# Exemple : Extraire les mots les plus fréquents par thème\nentretiens %&gt;%\n  unnest_tokens(mot, texte) %&gt;%           # Séparer chaque mot\n  anti_join(mots_vides_fr) %&gt;%            # Retirer \"le\", \"la\", \"de\"...\n  count(theme, mot, sort = TRUE) %&gt;%      # Compter par thème\n  group_by(theme) %&gt;%\n  top_n(10)                               # Garder le top 10\n\n\n\n\n\n\nCe que R permet en analyse qualitative\n\n\n\nAnalyse de sentiment automatisée\nDétection de cooccurrences (quels mots apparaissent ensemble?)\nVisualisation des thèmes et de leurs relations\nClassification automatique de segments de texte\nTout en gardant la possibilité de retourner au texte original"
+    "text": "Exemple 2 : Analyse de contenu avec R\nR peut aller beaucoup plus loin dans l’analyse de données textuelles\n# Exemple : Extraire les mots les plus fréquents par thème\nentretiens %&gt;%\n  unnest_tokens(mot, texte) %&gt;%           # Séparer chaque mot\n  anti_join(mots_vides_fr) %&gt;%            # Retirer \"le\", \"la\", \"de\"...\n  count(theme, mot, sort = TRUE) %&gt;%      # Compter par thème\n  group_by(theme) %&gt;%\n  top_n(10)                               # Garder le top 10\n\n\n\n\n\n\nCe que R permet avec les données textuelles\n\n\n\nAnalyse de sentiment automatisée\nDétection de cooccurrences (quels mots apparaissent ensemble?)\nVisualisation des thèmes et de leurs relations\nClassification automatique de segments de texte\nTout en gardant la possibilité de retourner au texte original"
   },
   {
-    "objectID": "slides.html#pourquoi-r-en-sciences-sociales",
-    "href": "slides.html#pourquoi-r-en-sciences-sociales",
+    "objectID": "slides.html#pause-réflexion",
+    "href": "slides.html#pause-réflexion",
     "title": "Découverte du langage de programmation R",
-    "section": "Pourquoi R en sciences sociales ?",
-    "text": "Pourquoi R en sciences sociales ?\n\n\nR est utilisé dans la vraie vie :\n\n\nOrganisations :\n\nNew York Times\nBBC\nGoogle, Facebook, Amazon et plusieurs autres\n\n\nRecherche au Québec :\n\nVox Pop Labs (Boussole électorale)\nCLESSN (Université Laval)\nNombreux chercheurs en sciences sociales"
+    "section": "Pause réflexion",
+    "text": "Pause réflexion\n\n\nPensez à votre projet de recherche actuel ou à venir.\n\n\nQuel type de données allez-vous analyser?\n\n\n\nQu’est-ce qui vous prend (ou vous prendrait) le plus de temps?\n\n\n\nEst-ce que certains des exemples qu’on vient de voir pourraient vous être utiles?"
+  },
+  {
+    "objectID": "slides.html#des-questions-jusquici",
+    "href": "slides.html#des-questions-jusquici",
+    "title": "Découverte du langage de programmation R",
+    "section": "Des questions jusqu’ici ?",
+    "text": "Des questions jusqu’ici ?\n\n\nC’est le moment de poser vos questions sur :\n\n\nCe qu’on a vu jusqu’à maintenant\nComment R pourrait s’appliquer à votre situation\nLes différences avec les outils que vous connaissez"
+  },
+  {
+    "objectID": "slides.html#voyons-maintenant-r-en-action",
+    "href": "slides.html#voyons-maintenant-r-en-action",
+    "title": "Découverte du langage de programmation R",
+    "section": "Voyons maintenant R en action",
+    "text": "Voyons maintenant R en action\n\nR est utilisé par des organisations reconnues :\n\n\nÀ l’international :\n\nNew York Times - visualisations journalistiques\nBBC - graphiques pour le web\nGoogle, Facebook, Amazon - data science\n\n\nAu Québec :\n\nVox Pop Labs (Boussole électorale)\nCLESSN (Université Laval)\nNombreux chercheurs en sciences sociales"
   },
   {
     "objectID": "slides.html#visualisations-avancées-avec-r",
     "href": "slides.html#visualisations-avancées-avec-r",
     "title": "Découverte du langage de programmation R",
     "section": "Visualisations avancées avec R",
-    "text": "Visualisations avancées avec R\n\nSuivi quotidien des intentions de vote - Élections fédérales 2025\n\n\n\n\n\n\n\n\nNote\n\n\nAnimation générée automatiquement chaque jour avec R - Centre d’analyse des politiques publiques"
-  },
-  {
-    "objectID": "slides.html#au-delà-des-chiffres",
-    "href": "slides.html#au-delà-des-chiffres",
-    "title": "Découverte du langage de programmation R",
-    "section": "Au-delà des chiffres",
-    "text": "Au-delà des chiffres\n\nR s’adapte à tous types de données\n\n\nTexte :\n\nAnalyse de sentiment\nClassification de documents\nTranscription audio\nExtraction d’informations\n\n\nMultimédia :\n\nAnalyse d’images\nCréation de vidéos\nInfographies automatisées\nPrésentations interactives"
+    "text": "Visualisations avancées avec R\n\nSuivi quotidien des intentions de vote - Élections fédérales 2025\n\n\n\n\n\n\n\n\nNote\n\n\nAnimation générée automatiquement chaque jour avec R - CLESSN, Université Laval"
   },
   {
     "objectID": "slides.html#applications-web-interactives-avec-shiny",
     "href": "slides.html#applications-web-interactives-avec-shiny",
     "title": "Découverte du langage de programmation R",
     "section": "Applications web interactives avec Shiny",
-    "text": "Applications web interactives avec Shiny\n\nExplorez vos données de manière interactive\n\n\n\n\n\n\n\n\nAstuce\n\n\nCliquez sur l’image pour voir l’application en action"
+    "text": "Applications web interactives avec Shiny\n\nTransformez vos analyses en outils accessibles à tous\n\n\n\n\n\n\n\n\nAstuce\n\n\nCliquez sur l’image pour voir l’application en action"
   },
   {
-    "objectID": "slides.html#et-après-r",
-    "href": "slides.html#et-après-r",
+    "objectID": "slides.html#au-delà-des-chiffres-et-du-texte",
+    "href": "slides.html#au-delà-des-chiffres-et-du-texte",
     "title": "Découverte du langage de programmation R",
-    "section": "Et après R ?",
-    "text": "Et après R ?\n\nApprendre R ouvre la porte à d’autres langages\nLes concepts appris en R se transfèrent facilement :\n\n\nAnalyse de données :\n\nPython (data science)\nJulia (calcul scientifique)\nSQL (bases de données)\n\n\nDéveloppement :\n\nJavaScript (web interactif)\nHTML/CSS (présentation)\nBash (automatisation)\n\n\n\n\n\n\n\n\nNote\n\n\nUne fois qu’on maîtrise un langage de programmation, les autres deviennent beaucoup plus faciles à apprendre"
+    "section": "Au-delà des chiffres et du texte",
+    "text": "Au-delà des chiffres et du texte\n\nR s’adapte à tous types de données\n\n\nCe qu’on peut analyser :\n\nDonnées de sondage\nTextes et documents\nDonnées spatiales (cartes)\nRéseaux sociaux\nImages et vidéos\n\n\nCe qu’on peut produire :\n\nGraphiques de qualité publication\nTableaux de bord interactifs\nRapports automatisés\nPrésentations (comme celle-ci!)\nApplications web"
   },
   {
-    "objectID": "slides.html#r-vs-stata-quelle-différence",
-    "href": "slides.html#r-vs-stata-quelle-différence",
+    "objectID": "slides.html#revenons-à-r-vs-stata",
+    "href": "slides.html#revenons-à-r-vs-stata",
     "title": "Découverte du langage de programmation R",
-    "section": "R vs Stata : quelle différence ?",
-    "text": "R vs Stata : quelle différence ?\n\nDeux philosophies différentes\n\n\n\n\n\n\n\n\n\nR\nStata\n\n\n\n\nNature\nLangage de programmation\nLogiciel statistique\n\n\nCoût\nGratuit et open-source\nLicence payante\n\n\nCourbe d’apprentissage\nPlus abrupte au début\nPlus accessible pour débuter\n\n\nFlexibilité\nTrès flexible et extensible\nPlus standardisé"
-  },
-  {
-    "objectID": "slides.html#avantages-de-r",
-    "href": "slides.html#avantages-de-r",
-    "title": "Découverte du langage de programmation R",
-    "section": "Avantages de R",
-    "text": "Avantages de R\n\n\n\nPuissance et flexibilité :\n\nPlus de 21,000 packages spécialisés\nPeut gérer plusieurs jeux de données simultanément\nMeilleurs outils graphiques (ggplot2)\nConnexion facile aux bases de données, APIs, web scraping\n\n\nCarrière et communauté :\n\nCompétence très recherchée hors académie\nÉnorme documentation en ligne\nNouvelles méthodes publiées d’abord en R\nTransition facile vers Python et autres langages\n\n\n\n\n\n\n\n\nÀ retenir\n\n\nR est un investissement : la courbe d’apprentissage est plus raide, mais les possibilités sont beaucoup plus vastes."
-  },
-  {
-    "objectID": "slides.html#avantages-de-stata",
-    "href": "slides.html#avantages-de-stata",
-    "title": "Découverte du langage de programmation R",
-    "section": "Avantages de Stata",
-    "text": "Avantages de Stata\n\n\n\nFacilité d’utilisation :\n\nFonctionnalités statistiques prêtes à l’emploi\nSyntaxe plus intuitive pour les débutants\nDocumentation officielle très claire\nErreurs standard robustes en un clic\n\n\nContexte d’utilisation :\n\nTrès répandu en sciences sociales et économie\nUtilisé dans les agences gouvernementales\nBon choix si temps limité pour apprendre\nCollaboration avec chercheurs qui l’utilisent\n\n\n\n\n\n\n\n\nÀ retenir\n\n\nStata est excellent pour des analyses statistiques classiques quand on veut des résultats rapidement sans programmation complexe."
+    "section": "Revenons à R vs Stata",
+    "text": "Revenons à R vs Stata\n\nMaintenant que vous avez vu ce que R peut faire…\n\n\nAvantages de R :\n\nPlus de 21,000 packages spécialisés\nPeut gérer plusieurs jeux de données simultanément\nMeilleurs outils graphiques (ggplot2)\nConnexion facile aux bases de données, APIs, web\nCompétence très recherchée hors académie\nGratuit!\n\n\nAvantages de Stata :\n\nFonctionnalités statistiques prêtes à l’emploi\nSyntaxe plus intuitive pour les débutants\nDocumentation officielle très claire\nTrès répandu en économie et sciences sociales\nBon choix si temps limité pour apprendre"
   },
   {
     "objectID": "slides.html#alors-r-ou-stata",
     "href": "slides.html#alors-r-ou-stata",
     "title": "Découverte du langage de programmation R",
     "section": "Alors, R ou Stata ?",
-    "text": "Alors, R ou Stata ?\n\nChoisir selon vos besoins :\n\n\n\n\n\n\n\nChoisir R si…\nChoisir Stata si…\n\n\n\n\nVous voulez une carrière hors académie\nVotre équipe utilise déjà Stata\n\n\nVous avez besoin de visualisations avancées\nVous faites des analyses économétriques classiques\n\n\nVous travaillez avec des données variées (texte, web, etc.)\nVous avez peu de temps pour apprendre\n\n\nVous voulez des analyses 100% reproductibles\nVous préférez une interface plus guidée\n\n\n\n\n\n\n\n\n\nAstuce\n\n\nNotre recommandation : Apprenez R, mais gardez des notions de Stata pour la collaboration !"
+    "text": "Alors, R ou Stata ?\n\nChoisir selon vos besoins :\n\n\n\n\n\n\n\nChoisir R si…\nChoisir Stata si…\n\n\n\n\nVous voulez une carrière hors académie\nVotre équipe utilise déjà Stata\n\n\nVous avez besoin de visualisations avancées\nVous faites des analyses économétriques classiques\n\n\nVous travaillez avec des données variées (texte, web, etc.)\nVous avez peu de temps pour apprendre\n\n\nVous voulez des analyses 100% reproductibles\nVous préférez une interface plus guidée\n\n\n\n\n\n\n\n\n\nAstuce\n\n\nNotre recommandation : Apprenez R, mais gardez des notions de Stata pour la collaboration!"
+  },
+  {
+    "objectID": "slides.html#et-après-r",
+    "href": "slides.html#et-après-r",
+    "title": "Découverte du langage de programmation R",
+    "section": "Et après R ?",
+    "text": "Et après R ?\n\nApprendre R ouvre la porte à d’autres langages\nLes concepts appris en R se transfèrent facilement :\n\n\nAnalyse de données :\n\nPython (data science)\nJulia (calcul scientifique)\nSQL (bases de données)\n\n\nDéveloppement :\n\nJavaScript (web interactif)\nHTML/CSS (présentation)\nBash (automatisation)\n\n\n\n\n\n\n\n\nNote\n\n\nUne fois qu’on maîtrise un langage de programmation, les autres deviennent beaucoup plus faciles à apprendre."
+  },
+  {
+    "objectID": "slides.html#concrètement-ça-ressemble-à-quoi",
+    "href": "slides.html#concrètement-ça-ressemble-à-quoi",
+    "title": "Découverte du langage de programmation R",
+    "section": "Concrètement, ça ressemble à quoi ?",
+    "text": "Concrètement, ça ressemble à quoi ?\n\n\nVoyons rapidement à quoi ressemble R en pratique.\n\n(Pas de panique, on ne va pas coder aujourd’hui!)"
   },
   {
     "objectID": "slides.html#installer-r-et-rstudio",
     "href": "slides.html#installer-r-et-rstudio",
     "title": "Découverte du langage de programmation R",
     "section": "Installer R et RStudio",
-    "text": "Installer R et RStudio\n\n\nQuelle est la différence ?\n\nR est le moteur, RStudio est le véhicule\nR est le langage, RStudio est la feuille de papier\nRStudio facilite l’utilisation de R\nRStudio est un IDE (Integrated Development Environment)\nPersonnalisation de l’environnement de travail\n\n\nLiens de téléchargement :\n\nInstaller R\nInstaller RStudio"
+    "text": "Installer R et RStudio\n\n\nQuelle est la différence ?\n\nR est le moteur, RStudio est le véhicule\nR est le langage, RStudio est l’interface\nRStudio facilite l’utilisation de R\nC’est gratuit, les deux!\n\n\nLiens de téléchargement :\n\nInstaller R\nInstaller RStudio\n\n(On vous guidera pour l’installation avant la formation Initiation)"
   },
   {
     "objectID": "slides.html#linterface-rstudio",
@@ -214,21 +249,21 @@
     "href": "slides.html#r-comme-calculatrice",
     "title": "Découverte du langage de programmation R",
     "section": "R comme calculatrice",
-    "text": "R comme calculatrice\n\n\n\n\n\n\nDémonstration\n\n\n\n\n\n\n\n# Opérations de base\n2 + 3\n\n[1] 5\n\n10 * 5\n\n[1] 50\n\n15 / 3\n\n[1] 5\n\nsqrt(16)\n\n[1] 4"
+    "text": "R comme calculatrice\n\n\n\n\n\n\nDémonstration rapide\n\n\n\n\n\n\n\n# Opérations de base\n2 + 3\n\n[1] 5\n\n10 * 5\n\n[1] 50\n\n15 / 3\n\n[1] 5\n\nsqrt(16)\n\n[1] 4"
   },
   {
     "objectID": "slides.html#créer-des-objets",
     "href": "slides.html#créer-des-objets",
     "title": "Découverte du langage de programmation R",
     "section": "Créer des objets",
-    "text": "Créer des objets\nEn R, on sauvegarde tout dans des objets avec &lt;-\n\n# Créer des objets simples\nfilm_prefere &lt;- \"Dune\"\nannee_sortie &lt;- 2021\nnote_imdb &lt;- 8.0\n\n\n# Voir le contenu des objets\nfilm_prefere\n\n[1] \"Dune\"\n\nannee_sortie\n\n[1] 2021\n\nnote_imdb\n\n[1] 8\n\n\n\n\n\n\n\n\nNote\n\n\nImportant : Les objets apparaissent dans le panneau Environment de RStudio !"
+    "text": "Créer des objets\nEn R, on sauvegarde tout dans des objets avec &lt;-\n\n# Créer des objets simples\nfilm_prefere &lt;- \"Dune\"\nannee_sortie &lt;- 2021\nnote_imdb &lt;- 8.0\n\n\n# Voir le contenu des objets\nfilm_prefere\n\n[1] \"Dune\"\n\nannee_sortie\n\n[1] 2021\n\nnote_imdb\n\n[1] 8\n\n\n\n\n\n\n\n\nNote\n\n\nImportant : Les objets apparaissent dans le panneau Environment de RStudio!"
   },
   {
     "objectID": "slides.html#les-packages-étendre-r",
     "href": "slides.html#les-packages-étendre-r",
     "title": "Découverte du langage de programmation R",
     "section": "Les packages : étendre R",
-    "text": "Les packages : étendre R\nLes packages sont comme des applications pour R\n\nR de base = fonctions essentielles\nPackages = fonctions spécialisées créées par la communauté\nPlus de 21,000 packages disponibles\nChaque package résout des problèmes spécifiques\n\n\n\n\n\n\n\nAnalogie\n\n\nR de base = téléphone vide Packages = applications qu’on télécharge"
+    "text": "Les packages : étendre R\nLes packages sont comme des applications pour R\n\nR de base = fonctions essentielles\nPackages = fonctions spécialisées créées par la communauté\nPlus de 21,000 packages disponibles\nChaque package résout des problèmes spécifiques\n\n\n\n\n\n\n\nAnalogie\n\n\nR de base = téléphone neuf Packages = applications qu’on télécharge selon nos besoins"
   },
   {
     "objectID": "slides.html#exemple-un-graphique-avec-ggplot2",
@@ -238,11 +273,11 @@
     "text": "Exemple : un graphique avec ggplot2\n\nlibrary(ggplot2)\n\n# Données exemple\ndonnees &lt;- data.frame(\n  categorie = c(\"A\", \"B\", \"C\", \"D\"),\n  valeur = c(25, 40, 15, 20)\n)\n\n# Graphique\nggplot(donnees, aes(x = categorie, y = valeur, fill = categorie)) +\n  geom_col() +\n  labs(title = \"Exemple de graphique avec R\") +\n  theme_minimal()"
   },
   {
-    "objectID": "slides.html#ce-quon-peut-faire-avec-r",
-    "href": "slides.html#ce-quon-peut-faire-avec-r",
+    "objectID": "slides.html#ce-quon-verra-dans-les-formations-suivantes",
+    "href": "slides.html#ce-quon-verra-dans-les-formations-suivantes",
     "title": "Découverte du langage de programmation R",
-    "section": "Ce qu’on peut faire avec R",
-    "text": "Ce qu’on peut faire avec R\n\n\nAnalyses quantitatives :\n\nStatistiques descriptives\nRégressions (linéaire, logistique, etc.)\nAnalyses factorielles\nModèles multiniveaux\n\n\nAnalyses qualitatives :\n\nAnalyse de contenu textuel\nAnalyse de sentiment\nClassification de documents\nVisualisation de réseaux\n\n\n\n\n\n\n\n\n\nEt bien plus encore…\n\n\nRapports automatisés, tableaux de bord interactifs, cartes géographiques, machine learning…"
+    "section": "Ce qu’on verra dans les formations suivantes",
+    "text": "Ce qu’on verra dans les formations suivantes\n\n\nAnalyses quantitatives :\n\nStatistiques descriptives\nRégressions (linéaire, logistique, etc.)\nAnalyses factorielles\nMoyenne, écart-type, variance\n\n\nAnalyses qualitatives :\n\nAnalyse de contenu textuel\nNuages de mots\nAnalyse de sentiment\nVisualisation de thèmes\n\n\n\n\n\n\n\n\n\nEt bien plus encore…\n\n\nRapports automatisés, tableaux de bord interactifs, cartes géographiques…"
   },
   {
     "objectID": "slides.html#formations-offertes-par-la-suite",
@@ -270,14 +305,14 @@
     "href": "slides.html#ressources-pour-commencer",
     "title": "Découverte du langage de programmation R",
     "section": "Ressources pour commencer",
-    "text": "Ressources pour commencer\nDocumentation et aide :\n\nR Documentation\nRStudio Cheatsheets\n\nApprentissage :\n\nswirl - apprendre R dans R\nR for Data Science (gratuit en ligne)\nChatGPT pour déboguer vos erreurs !\n\nCommunauté :\n\nStack Overflow\nRStudio Community"
+    "text": "Ressources pour commencer\nDocumentation et aide :\n\nR Documentation\nRStudio Cheatsheets\n\nApprentissage :\n\nswirl - apprendre R dans R\nR for Data Science (gratuit en ligne)\nChatGPT pour déboguer vos erreurs!\n\nCommunauté :\n\nStack Overflow\nRStudio Community"
   },
   {
     "objectID": "slides.html#questions",
     "href": "slides.html#questions",
     "title": "Découverte du langage de programmation R",
     "section": "Questions ?",
-    "text": "Questions ?\n\n\n\n\n\n\nMerci pour votre attention !\n\n\nContact : etienne.proulx.2@ulaval.ca\n\n\n\nProchaines étapes :\n\nInstallez R et RStudio sur votre ordinateur\nInscrivez-vous aux formations Initiation et Approfondissement\nExplorez les ressources en ligne\n\n\n\n\n\nFaculté des sciences sociales"
+    "text": "Questions ?\n\n\n\n\n\n\n\nMerci pour votre attention!\n\n\nContact : etienne.proulx.2@ulaval.ca\n\n\n\nProchaines étapes :\n\nInscrivez-vous aux formations Initiation (11 mars) et Approfondissement (20 mars)\nOn vous enverra les instructions pour installer R et RStudio avant la formation\nExplorez les ressources en ligne si vous êtes curieux!\n\n\n\n\n\n\nFaculté des sciences sociales"
   },
   {
     "objectID": "ancien.html#objectifs-du-cours",
