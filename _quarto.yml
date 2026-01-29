@@ -3,29 +3,27 @@ project:
   output-dir: docs
 
 website:
-  title: "Initiation à l'analyse des données avec R"
-  description: "Formation théorique pour l'introduction à R - Université Laval"
-  site-url: "https://etienneprx.github.io/R_intro_fss"
-  repo-url: "https://github.com/etienneprx/R_intro_fss"
+  title: "Découverte R - FSS"
+  description: "Atelier de découverte de R - Faculté des sciences sociales, Université Laval"
+  site-url: "https://etienneprx.github.io/R_decouverte_fss"
+  repo-url: "https://github.com/etienneprx/R_decouverte_fss"
 
   navbar:
-    title: "Intro R - FSS"
+    title: "Découverte R - FSS"
     left:
       - href: index.qmd
         text: Accueil
       - href: slides.qmd
         text: Slides
-      - href: exercices.qmd
-        text: Exercices
     right:
       - icon: github
-        href: "https://github.com/etienneprx/R_intro_fss"
+        href: "https://github.com/etienneprx/R_decouverte_fss"
 
   page-footer:
-    left: "© 2025 Étienne Proulx - Université Laval"
+    left: "© 2026 Étienne Proulx - Université Laval"
     right:
       - icon: github
-        href: "https://github.com/etienneprx/R_intro_fss"
+        href: "https://github.com/etienneprx/R_decouverte_fss"
 
 format:
   html:

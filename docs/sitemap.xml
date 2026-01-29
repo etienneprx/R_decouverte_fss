@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://etienneprx.github.io/R_intro_fss/exercices.html</loc>
+    <loc>https://etienneprx.github.io/R_decouverte_fss/exercices.html</loc>
     <lastmod>2025-09-26T03:08:36.969Z</lastmod>
   </url>
   <url>
-    <loc>https://etienneprx.github.io/R_intro_fss/slides.html</loc>
+    <loc>https://etienneprx.github.io/R_decouverte_fss/index.html</loc>
+    <lastmod>2026-01-29T02:34:08.443Z</lastmod>
+  </url>
+  <url>
+    <loc>https://etienneprx.github.io/R_decouverte_fss/slides.html</loc>
     <lastmod>2025-09-26T02:35:14.111Z</lastmod>
   </url>
   <url>
-    <loc>https://etienneprx.github.io/R_intro_fss/index.html</loc>
-    <lastmod>2025-09-24T23:05:07.685Z</lastmod>
+    <loc>https://etienneprx.github.io/R_decouverte_fss/ancien.html</loc>
+    <lastmod>2025-09-22T13:58:56.110Z</lastmod>
   </url>
 </urlset>

@@ -1,31 +1,39 @@
 ---
-title: "Initiation à l'analyse des données avec R"
-subtitle: "Formation théorique | Université Laval"
+title: "Découverte R - FSS"
+subtitle: "Atelier d'introduction | Université Laval"
 author: "Étienne Proulx"
-date: today
+date: "30 janvier 2026"
 date-format: "D MMMM YYYY"
 lang: fr
 ---
 
 ## Bienvenue
 
-Cette formation offre une introduction complète à l'analyse des données avec R.
+Cette courte activité s'adresse aux personnes qui devront analyser des données dans le cadre de leur projet de recherche, mais qui n'ont pas encore choisi leur outil ou leur approche méthodologique. L'objectif est de présenter les langages de programmation comme outils d'analyse, en mettant l'accent sur R et ses applications concrètes en sciences sociales.
 
 ::: {.callout-important}
-## 📋 Présence obligatoire
-**Participants :** Veuillez remplir le **[formulaire de présence](https://forms.office.com/pages/responsepage.aspx?id=1Yt3Vj9q00uiZZMWPk1b_tBW0Xm042tAp2039Zj2C11UMUZCNFJKVUZJUUU5V1BOQjJCRDQ2TjlZNyQlQCN0PWcu&route=shorturl)** avant le début de la formation.
+## Présence obligatoire
+**Participants :** Veuillez remplir le **[formulaire de présence](https://forms.office.com/r/16apTjcebp)** avant le début de l'atelier.
 :::
 
-### Contenu de la formation
+### Contenu de l'atelier
 
-- **[Slides de présentation](slides.qmd)** : Contenu théorique de la formation
-- **[Exercices pratiques](exercices.qmd)** : Exercices pour mettre en pratique les concepts
-- **[Script R complet](script/script_r_formation.r)** : Tous les exemples de code de la formation à télécharger
+La formation abordera :
+
+- Les avantages des langages de programmation pour l'analyse de données qualitatives et quantitatives
+- Une introduction à R : contextes d'utilisation et principales fonctionnalités
+- Des exemples d'applications en recherche en sciences sociales
+- Un aperçu des formations Initiation et Approfondissement offertes par la suite
+
+### Ressources
+
+- **[Slides de présentation](slides.qmd)** : Contenu de l'atelier
 
 ### À propos
 
-Formation développée pour la Faculté des sciences sociales de l'Université Laval.
+Atelier développé pour la Faculté des sciences sociales de l'Université Laval.
 
-**Durée :** 3 heures (9h à 12h)
-**Format :** Présentation théorique avec exercices pratiques
-**Niveau :** Débutant
+**Date :** 30 janvier 2026
+**Durée :** 1h30
+**Format :** Présentation interactive
+**Niveau :** Découverte
