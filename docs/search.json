@@ -161,20 +161,6 @@
     "text": "Exemple 2 : Analyse de contenu avec R\nR peut aller beaucoup plus loin dans l’analyse de données textuelles\n# Exemple : Extraire les mots les plus fréquents par thème\nentretiens %&gt;%\n  unnest_tokens(mot, texte) %&gt;%           # Séparer chaque mot\n  anti_join(mots_vides_fr) %&gt;%            # Retirer \"le\", \"la\", \"de\"...\n  count(theme, mot, sort = TRUE) %&gt;%      # Compter par thème\n  group_by(theme) %&gt;%\n  top_n(10)                               # Garder le top 10\n\n\n\n\n\n\nCe que R permet avec les données textuelles\n\n\n\nAnalyse de sentiment automatisée\nDétection de cooccurrences (quels mots apparaissent ensemble?)\nVisualisation des thèmes et de leurs relations\nClassification automatique de segments de texte\nTout en gardant la possibilité de retourner au texte original"
   },
   {
-    "objectID": "slides.html#pause-réflexion",
-    "href": "slides.html#pause-réflexion",
-    "title": "Découverte du langage de programmation R",
-    "section": "Pause réflexion",
-    "text": "Pause réflexion\n\n\nPensez à votre projet de recherche actuel ou à venir.\n\n\nQuel type de données allez-vous analyser?\n\n\n\nQu’est-ce qui vous prend (ou vous prendrait) le plus de temps?\n\n\n\nEst-ce que certains des exemples qu’on vient de voir pourraient vous être utiles?"
-  },
-  {
-    "objectID": "slides.html#des-questions-jusquici",
-    "href": "slides.html#des-questions-jusquici",
-    "title": "Découverte du langage de programmation R",
-    "section": "Des questions jusqu’ici ?",
-    "text": "Des questions jusqu’ici ?\n\n\nC’est le moment de poser vos questions sur :\n\n\nCe qu’on a vu jusqu’à maintenant\nComment R pourrait s’appliquer à votre situation\nLes différences avec les outils que vous connaissez"
-  },
-  {
     "objectID": "slides.html#voyons-maintenant-r-en-action",
     "href": "slides.html#voyons-maintenant-r-en-action",
     "title": "Découverte du langage de programmation R",

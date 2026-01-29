@@ -321,52 +321,6 @@ entretiens %>%
 
 ---
 
-## Pause réflexion {.smaller background-color="#5B4E77"}
-
-::: {style="color: white; text-align: center;"}
-
-<br>
-
-### Pensez à votre projet de recherche actuel ou à venir.
-
-<br>
-
-- Quel type de données allez-vous analyser?
-
-<br>
-
-- Qu'est-ce qui vous prend (ou vous prendrait) le plus de temps?
-
-<br>
-
-- Est-ce que certains des exemples qu'on vient de voir pourraient vous être utiles?
-
-<br>
-
-:::
-
----
-
-## Des questions jusqu'ici ? {.smaller background-color="#4A90A4"}
-
-::: {style="color: white; text-align: center;"}
-
-<br>
-
-### C'est le moment de poser vos questions sur :
-
-<br>
-
-- Ce qu'on a vu jusqu'à maintenant
-- Comment R pourrait s'appliquer à votre situation
-- Les différences avec les outils que vous connaissez
-
-<br>
-
-:::
-
----
-
 ## Voyons maintenant R en action {.smaller background-color="#2C5F77"}
 
 ::: {style="color: white;"}
