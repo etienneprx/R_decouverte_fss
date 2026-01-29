@@ -96,6 +96,8 @@ Cette activité vise à présenter les langages de programmation comme outils d'
 
 **Situation :** Vous avez un sondage de 5,000 répondants avec 50 variables.
 
+**Objectif :** Comparer le score moyen de satisfaction selon la région et le groupe d'âge.
+
 ::: {.columns}
 ::: {.column width="50%"}
 **Dans Excel :**

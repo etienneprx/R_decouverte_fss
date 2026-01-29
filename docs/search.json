@@ -109,7 +109,7 @@
     "href": "slides.html#exemple-1-données-quantitatives",
     "title": "Découverte du langage de programmation R",
     "section": "Exemple 1 : Données quantitatives",
-    "text": "Exemple 1 : Données quantitatives\nSituation : Vous avez un sondage de 5,000 répondants avec 50 variables.\n\n\nDans Excel :\n\nTrier manuellement les colonnes\nCréer des formules pour chaque calcul\nCopier-coller pour chaque sous-groupe\nRefaire tout si les données changent\nRisque d’erreurs à chaque étape\n\n\nAvec R :\n# En 3 lignes, on obtient :\ndonnees %&gt;%\n  group_by(region, age_groupe) %&gt;%\n  summarise(moyenne = mean(score),\n            ecart_type = sd(score),\n            n = n())\n\nRésultats instantanés pour tous les groupes\nReproductible : relancer = mêmes résultats\nDonnées mises à jour? On relance le code."
+    "text": "Exemple 1 : Données quantitatives\nSituation : Vous avez un sondage de 5,000 répondants avec 50 variables.\nObjectif : Comparer le score moyen de satisfaction selon la région et le groupe d’âge.\n\n\nDans Excel :\n\nTrier manuellement les colonnes\nCréer des formules pour chaque calcul\nCopier-coller pour chaque sous-groupe\nRefaire tout si les données changent\nRisque d’erreurs à chaque étape\n\n\nAvec R :\n# En 3 lignes, on obtient :\ndonnees %&gt;%\n  group_by(region, age_groupe) %&gt;%\n  summarise(moyenne = mean(score),\n            ecart_type = sd(score),\n            n = n())\n\nRésultats instantanés pour tous les groupes\nReproductible : relancer = mêmes résultats\nDonnées mises à jour? On relance le code."
   },
   {
     "objectID": "slides.html#exemple-1-la-puissance-du-code",
