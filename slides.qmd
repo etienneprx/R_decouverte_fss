@@ -1,5 +1,5 @@
 ---
-title: "Découverte R"
+title: "Découverte du langage de programmation R"
 subtitle: "Atelier d'introduction | Faculté des sciences sociales"
 author: "Étienne Proulx"
 date: "30 janvier 2026"
@@ -48,6 +48,20 @@ Cette activité vise à présenter les langages de programmation comme outils d'
 
 ---
 
+## Cette situation vous est familière ? {.smaller}
+
+::: {.columns}
+::: {.column width="50%"}
+![](images/excel_hell.jpg){width="100%"}
+:::
+
+::: {.column width="50%"}
+![](images/1-discouraged-worker.jpg){width="100%"}
+:::
+:::
+
+---
+
 ## Qu'est-ce que R ? {.smaller}
 
 ::: {.columns}
@@ -90,9 +104,9 @@ Cette activité vise à présenter les langages de programmation comme outils d'
 ::: {.column width="50%"}
 **Organisations :**
 
-- [AirBnB](https://medium.com/airbnb-engineering/using-r-packages-and-education-to-scale-data-science-at-airbnb-906faa58e12d) - analyse de données
-- [BBC](https://bbc.github.io/rcookbook/) - graphiques journalistiques
-- Google, Facebook, Amazon - data science
+- [New York Times](https://www.r-bloggers.com/2015/10/amanda-cox-on-using-r-at-the-nyt/) 
+- [BBC](https://bbc.github.io/rcookbook/)
+- Google, Facebook, Amazon et plusieurs autres
 
 :::
 
