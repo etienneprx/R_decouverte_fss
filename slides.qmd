@@ -642,34 +642,82 @@ Rapports automatisés, tableaux de bord interactifs, cartes géographiques, mach
 
 ::: {style="color: white;"}
 
-**Parcours de formation R à la FSS**
+**Parcours de formation R à la FSS - Hiver 2026**
+
+| Date | Formation | Horaire |
+|------|-----------|---------|
+| 11 mars 2026 | Initiation à R | 9h à 15h |
+| 20 mars 2026 | Approfondissement R | 9h à 15h |
+
+:::
+
+---
+
+## Initiation à R | 11 mars 2026 {.smaller background-color="#4A90A4"}
+
+::: {style="color: #333;"}
+
+**Formation théorique (9h à 12h)**
+
+À partir d'une situation de recherche concrète et d'un jeu de données partagé, vous apprendrez à importer, formater et visualiser des données quantitatives et qualitatives.
 
 ::: {.columns}
 ::: {.column width="50%"}
-**Initiation à R (3h)**
+**Contenu :**
 
-- Interface RStudio en détail
-- Types de données et objets
-- Import et manipulation de données
-- Analyses descriptives
-- Premiers graphiques avec ggplot2
+- Introduction à R et lien avec Stata/SPSS
+- Analyse descriptive
+- Représentation graphique des données
+- Moyenne, écart-type, variance
+- Nuage de mots (données qualitatives)
 
 :::
 
 ::: {.column width="50%"}
-**Approfondissement R (3h)**
+**Atelier pratique (13h à 15h)**
 
-- Manipulation avancée avec dplyr
-- Visualisations complexes
-- Analyses statistiques
-- Rapports reproductibles
-- Bonnes pratiques de codage
+En présence uniquement. Des mentors seront disponibles pour :
+
+- Répondre à vos questions
+- Vous accompagner sur les exercices
+- Vous aider à appliquer les techniques
 
 :::
 :::
 
-::: {.callout-tip}
-Ces formations vous donneront les compétences pratiques pour utiliser R dans vos projets de recherche !
+:::
+
+---
+
+## Approfondissement R | 20 mars 2026 {.smaller background-color="#4A90A4"}
+
+::: {style="color: #333;"}
+
+**Formation théorique (9h à 12h)**
+
+Pour celles et ceux qui ont déjà une familiarité avec R. Approfondissement des compétences en analyse quantitative et qualitative avec des données réelles.
+
+::: {.columns}
+::: {.column width="50%"}
+**Contenu :**
+
+- Techniques d'analyse textuelle avancées
+- Régression linéaire
+- Corrélation et causalité
+- Application à vos propres données
+
+:::
+
+::: {.column width="50%"}
+**Atelier pratique (13h à 15h)**
+
+En présence uniquement. Venez avec :
+
+- Votre projet de recherche
+- Vos questions spécifiques
+- Vos données (si vous le souhaitez)
+
+:::
 :::
 
 :::

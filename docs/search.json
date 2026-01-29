@@ -249,7 +249,21 @@
     "href": "slides.html#formations-offertes-par-la-suite",
     "title": "Découverte du langage de programmation R",
     "section": "Formations offertes par la suite",
-    "text": "Formations offertes par la suite\n\nParcours de formation R à la FSS\n\n\nInitiation à R (3h)\n\nInterface RStudio en détail\nTypes de données et objets\nImport et manipulation de données\nAnalyses descriptives\nPremiers graphiques avec ggplot2\n\n\nApprofondissement R (3h)\n\nManipulation avancée avec dplyr\nVisualisations complexes\nAnalyses statistiques\nRapports reproductibles\nBonnes pratiques de codage\n\n\n\n\n\n\n\n\nAstuce\n\n\nCes formations vous donneront les compétences pratiques pour utiliser R dans vos projets de recherche !"
+    "text": "Formations offertes par la suite\n\nParcours de formation R à la FSS - Hiver 2026\n\n\n\nDate\nFormation\nHoraire\n\n\n\n\n11 mars 2026\nInitiation à R\n9h à 15h\n\n\n20 mars 2026\nApprofondissement R\n9h à 15h"
+  },
+  {
+    "objectID": "slides.html#initiation-à-r-11-mars-2026",
+    "href": "slides.html#initiation-à-r-11-mars-2026",
+    "title": "Découverte du langage de programmation R",
+    "section": "Initiation à R | 11 mars 2026",
+    "text": "Initiation à R | 11 mars 2026\n\nFormation théorique (9h à 12h)\nÀ partir d’une situation de recherche concrète et d’un jeu de données partagé, vous apprendrez à importer, formater et visualiser des données quantitatives et qualitatives.\n\n\nContenu :\n\nIntroduction à R et lien avec Stata/SPSS\nAnalyse descriptive\nReprésentation graphique des données\nMoyenne, écart-type, variance\nNuage de mots (données qualitatives)\n\n\nAtelier pratique (13h à 15h)\nEn présence uniquement. Des mentors seront disponibles pour :\n\nRépondre à vos questions\nVous accompagner sur les exercices\nVous aider à appliquer les techniques"
+  },
+  {
+    "objectID": "slides.html#approfondissement-r-20-mars-2026",
+    "href": "slides.html#approfondissement-r-20-mars-2026",
+    "title": "Découverte du langage de programmation R",
+    "section": "Approfondissement R | 20 mars 2026",
+    "text": "Approfondissement R | 20 mars 2026\n\nFormation théorique (9h à 12h)\nPour celles et ceux qui ont déjà une familiarité avec R. Approfondissement des compétences en analyse quantitative et qualitative avec des données réelles.\n\n\nContenu :\n\nTechniques d’analyse textuelle avancées\nRégression linéaire\nCorrélation et causalité\nApplication à vos propres données\n\n\nAtelier pratique (13h à 15h)\nEn présence uniquement. Venez avec :\n\nVotre projet de recherche\nVos questions spécifiques\nVos données (si vous le souhaitez)"
   },
   {
     "objectID": "slides.html#ressources-pour-commencer",
