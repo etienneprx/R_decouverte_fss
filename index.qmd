@@ -9,7 +9,7 @@ lang: fr
 
 ::: {.callout-tip}
 ## Accédez à cette page
-<h2 style="text-align: center; margin: 20px 0;">**etienneprx.github.io/R_decouverte_fss**</h2>
+<h2 style="text-align: center; margin: 20px 0;">**https://www.etienneproulx.org/R_decouverte_fss**</h2>
 :::
 
 ## Bienvenue
