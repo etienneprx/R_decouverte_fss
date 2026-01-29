@@ -7,6 +7,11 @@ date-format: "D MMMM YYYY"
 lang: fr
 ---
 
+::: {.callout-tip}
+## Accédez à cette page
+<h2 style="text-align: center; margin: 20px 0;">**etienneprx.github.io/R_decouverte_fss**</h2>
+:::
+
 ## Bienvenue
 
 Cette courte activité s'adresse aux personnes qui devront analyser des données dans le cadre de leur projet de recherche, mais qui n'ont pas encore choisi leur outil ou leur approche méthodologique. L'objectif est de présenter les langages de programmation comme outils d'analyse, en mettant l'accent sur R et ses applications concrètes en sciences sociales.
