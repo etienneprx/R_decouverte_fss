@@ -52,8 +52,6 @@ Cette activité vise à présenter les langages de programmation comme outils d'
 
 ::: {style="color: white;"}
 
-**Levez la main si...**
-
 <br>
 
 - Vous avez des données à analyser dans le cadre de votre projet, mais vous ne savez pas encore quel outil utiliser?
@@ -140,8 +138,6 @@ Cette activité vise à présenter les langages de programmation comme outils d'
 ## Mais attendez... R ou Stata ? {.smaller background-color="#2C5F77"}
 
 ::: {style="color: white;"}
-
-**C'est probablement LA question que vous vous posez.**
 
 <br>
 
@@ -513,10 +509,6 @@ Une fois qu'on maîtrise un langage de programmation, les autres deviennent beau
 <br>
 
 ### Voyons rapidement à quoi ressemble R en pratique.
-
-<br>
-
-(Pas de panique, on ne va pas coder aujourd'hui!)
 
 <br>
 

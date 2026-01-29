@@ -95,7 +95,7 @@
     "href": "slides.html#avant-de-commencer",
     "title": "Découverte du langage de programmation R",
     "section": "Avant de commencer…",
-    "text": "Avant de commencer…\n\nLevez la main si…\n\n\nVous avez des données à analyser dans le cadre de votre projet, mais vous ne savez pas encore quel outil utiliser?\n\n\n\nVous avez déjà entendu parler de R, mais vous n’êtes pas certain·e si c’est pour vous?\n\n\n\nVous utilisez déjà Excel ou SPSS et vous vous demandez s’il existe mieux?"
+    "text": "Avant de commencer…\n\n\n\nVous avez des données à analyser dans le cadre de votre projet, mais vous ne savez pas encore quel outil utiliser?\n\n\n\nVous avez déjà entendu parler de R, mais vous n’êtes pas certain·e si c’est pour vous?\n\n\n\nVous utilisez déjà Excel ou SPSS et vous vous demandez s’il existe mieux?"
   },
   {
     "objectID": "slides.html#cette-situation-vous-est-familière",
@@ -123,7 +123,7 @@
     "href": "slides.html#mais-attendez-r-ou-stata",
     "title": "Découverte du langage de programmation R",
     "section": "Mais attendez… R ou Stata ?",
-    "text": "Mais attendez… R ou Stata ?\n\nC’est probablement LA question que vous vous posez.\n\n\n\n\n\n\n\n\n\n\nR\nStata\n\n\n\n\nNature\nLangage de programmation\nLogiciel statistique\n\n\nCoût\nGratuit et open-source\nLicence payante\n\n\nCourbe d’apprentissage\nPlus abrupte au début\nPlus accessible pour débuter\n\n\nFlexibilité\nTrès flexible et extensible\nPlus standardisé\n\n\n\n\nOn va explorer ça plus en détail, mais d’abord… voyons ce que R peut faire concrètement."
+    "text": "Mais attendez… R ou Stata ?\n\n\n\n\n\n\n\n\n\n\n\nR\nStata\n\n\n\n\nNature\nLangage de programmation\nLogiciel statistique\n\n\nCoût\nGratuit et open-source\nLicence payante\n\n\nCourbe d’apprentissage\nPlus abrupte au début\nPlus accessible pour débuter\n\n\nFlexibilité\nTrès flexible et extensible\nPlus standardisé\n\n\n\n\nOn va explorer ça plus en détail, mais d’abord… voyons ce que R peut faire concrètement."
   },
   {
     "objectID": "slides.html#exemple-1-données-quantitatives",
@@ -214,7 +214,7 @@
     "href": "slides.html#concrètement-ça-ressemble-à-quoi",
     "title": "Découverte du langage de programmation R",
     "section": "Concrètement, ça ressemble à quoi ?",
-    "text": "Concrètement, ça ressemble à quoi ?\n\n\nVoyons rapidement à quoi ressemble R en pratique.\n\n(Pas de panique, on ne va pas coder aujourd’hui!)"
+    "text": "Concrètement, ça ressemble à quoi ?\n\n\nVoyons rapidement à quoi ressemble R en pratique."
   },
   {
     "objectID": "slides.html#installer-r-et-rstudio",
