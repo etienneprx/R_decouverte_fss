@@ -51,11 +51,11 @@ Cette activité vise à présenter les langages de programmation comme outils d'
 ## Cette situation vous est familière ? {.smaller}
 
 ::: {.columns}
-::: {.column width="50%"}
+::: {.column width="60%"}
 ![](images/excel_hell.jpg){width="100%"}
 :::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 ![](images/1-discouraged-worker.jpg){width="100%"}
 :::
 :::
@@ -89,6 +89,150 @@ Cette activité vise à présenter les langages de programmation comme outils d'
 <br>
 
 > R est un **langage de programmation statistique**, pas juste un logiciel avec des menus.
+
+---
+
+## Exemple 1 : Données quantitatives {.smaller}
+
+**Situation :** Vous avez un sondage de 5,000 répondants avec 50 variables.
+
+::: {.columns}
+::: {.column width="50%"}
+**Dans Excel :**
+
+- Trier manuellement les colonnes
+- Créer des formules pour chaque calcul
+- Copier-coller pour chaque sous-groupe
+- Refaire tout si les données changent
+- Risque d'erreurs à chaque étape
+
+:::
+
+::: {.column width="50%"}
+**Avec R :**
+
+```r
+# En 3 lignes, on obtient :
+donnees %>%
+  group_by(region, age_groupe) %>%
+  summarise(moyenne = mean(score),
+            ecart_type = sd(score),
+            n = n())
+```
+
+- Résultats instantanés pour tous les groupes
+- Reproductible : relancer = mêmes résultats
+- Données mises à jour? On relance le code.
+
+:::
+:::
+
+---
+
+## Exemple 1 : La puissance du code {.smaller}
+
+**Le même code s'adapte à n'importe quel jeu de données**
+
+::: {.columns}
+::: {.column width="50%"}
+
+```r
+# Aujourd'hui : sondage électoral
+sondage %>%
+  group_by(region) %>%
+  summarise(
+    intention_PLC = mean(vote_lib),
+    intention_PCC = mean(vote_cons)
+  )
+```
+
+:::
+
+::: {.column width="50%"}
+
+```r
+# Demain : données de santé
+patients %>%
+  group_by(groupe_age) %>%
+  summarise(
+    tension_moyenne = mean(tension),
+    n_patients = n()
+  )
+```
+
+:::
+:::
+
+<br>
+
+::: {.callout-tip}
+## Le principe clé
+Vous apprenez la logique **une fois**, puis vous l'appliquez à tous vos projets. Pas besoin de tout réapprendre à chaque nouvelle analyse.
+:::
+
+---
+
+## Exemple 2 : Données qualitatives {.smaller}
+
+**Situation :** Vous avez 30 entretiens semi-dirigés à analyser.
+
+::: {.columns}
+::: {.column width="50%"}
+**Approche traditionnelle :**
+
+- Lire chaque entretien plusieurs fois
+- Surligner manuellement les passages
+- Compter les occurrences à la main
+- Difficile de repérer des patterns subtils
+- Très chronophage
+
+:::
+
+::: {.column width="50%"}
+**Avec R :**
+
+```r
+# Trouver tous les passages sur un thème
+entretiens %>%
+  filter(str_detect(texte,
+    "stress|anxiété|pression"))
+
+# Compter les thèmes par participant
+entretiens %>%
+  group_by(participant) %>%
+  summarise(
+    nb_stress = sum(str_detect(texte, "stress")),
+    nb_positif = sum(str_detect(texte, "satisf"))
+  )
+```
+
+:::
+:::
+
+---
+
+## Exemple 2 : Analyse de contenu avec R {.smaller}
+
+**R peut aller beaucoup plus loin dans l'analyse qualitative**
+
+```r
+# Exemple : Extraire les mots les plus fréquents par thème
+entretiens %>%
+  unnest_tokens(mot, texte) %>%           # Séparer chaque mot
+  anti_join(mots_vides_fr) %>%            # Retirer "le", "la", "de"...
+  count(theme, mot, sort = TRUE) %>%      # Compter par thème
+  group_by(theme) %>%
+  top_n(10)                               # Garder le top 10
+```
+
+::: {.callout-note}
+## Ce que R permet en analyse qualitative
+- Analyse de sentiment automatisée
+- Détection de cooccurrences (quels mots apparaissent ensemble?)
+- Visualisation des thèmes et de leurs relations
+- Classification automatique de segments de texte
+- **Tout en gardant la possibilité de retourner au texte original**
+:::
 
 ---
 
@@ -182,26 +326,6 @@ Animation générée automatiquement chaque jour avec R - Centre d'analyse des p
 
 ::: {.callout-tip}
 Cliquez sur l'image pour voir l'[application en action](https://nz-stefan.shinyapps.io/commute-explorer-2/)
-:::
-
----
-
-## Applications Shiny : possibilités infinies {.smaller background-color="#5B4E77"}
-
-::: {style="color: white;"}
-
-**Transformez vos analyses en outils accessibles**
-**Exemples d'utilisation :**
-
-- Tableaux de bord de suivi
-- Explorateurs de données interactifs
-- Outils de collecte de données
-- Simulateurs et calculateurs
-- Rapports personnalisés
-
-::: {.callout-note}
-Aucune connaissance en développement web nécessaire
-:::
 :::
 
 ---

@@ -429,9 +429,9 @@
 <section id="cette-situation-vous-est-familière" class="slide level2 smaller">
 <h2>Cette situation vous est familière ?</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:60%;">
 <p><img data-src="images/excel_hell.jpg" style="width:100.0%"></p>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:40%;">
 <p><img data-src="images/1-discouraged-worker.jpg" style="width:100.0%"></p>
 </div></div>
 </section>
@@ -459,6 +459,129 @@
 <blockquote>
 <p>R est un <strong>langage de programmation statistique</strong>, pas juste un logiciel avec des menus.</p>
 </blockquote>
+</section>
+<section id="exemple-1-données-quantitatives" class="slide level2 smaller">
+<h2>Exemple 1 : Données quantitatives</h2>
+<p><strong>Situation :</strong> Vous avez un sondage de 5,000 répondants avec 50 variables.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Dans Excel :</strong></p>
+<ul>
+<li>Trier manuellement les colonnes</li>
+<li>Créer des formules pour chaque calcul</li>
+<li>Copier-coller pour chaque sous-groupe</li>
+<li>Refaire tout si les données changent</li>
+<li>Risque d’erreurs à chaque étape</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Avec R :</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># En 3 lignes, on obtient :</span></span>
+<span id="cb1-2"><a></a>donnees <span class="sc">%&gt;%</span></span>
+<span id="cb1-3"><a></a>  <span class="fu">group_by</span>(region, age_groupe) <span class="sc">%&gt;%</span></span>
+<span id="cb1-4"><a></a>  <span class="fu">summarise</span>(<span class="at">moyenne =</span> <span class="fu">mean</span>(score),</span>
+<span id="cb1-5"><a></a>            <span class="at">ecart_type =</span> <span class="fu">sd</span>(score),</span>
+<span id="cb1-6"><a></a>            <span class="at">n =</span> <span class="fu">n</span>())</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Résultats instantanés pour tous les groupes</li>
+<li>Reproductible : relancer = mêmes résultats</li>
+<li>Données mises à jour? On relance le code.</li>
+</ul>
+</div></div>
+</section>
+<section id="exemple-1-la-puissance-du-code" class="slide level2 smaller">
+<h2>Exemple 1 : La puissance du code</h2>
+<p><strong>Le même code s’adapte à n’importe quel jeu de données</strong></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># Aujourd'hui : sondage électoral</span></span>
+<span id="cb2-2"><a></a>sondage <span class="sc">%&gt;%</span></span>
+<span id="cb2-3"><a></a>  <span class="fu">group_by</span>(region) <span class="sc">%&gt;%</span></span>
+<span id="cb2-4"><a></a>  <span class="fu">summarise</span>(</span>
+<span id="cb2-5"><a></a>    <span class="at">intention_PLC =</span> <span class="fu">mean</span>(vote_lib),</span>
+<span id="cb2-6"><a></a>    <span class="at">intention_PCC =</span> <span class="fu">mean</span>(vote_cons)</span>
+<span id="cb2-7"><a></a>  )</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># Demain : données de santé</span></span>
+<span id="cb3-2"><a></a>patients <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a></a>  <span class="fu">group_by</span>(groupe_age) <span class="sc">%&gt;%</span></span>
+<span id="cb3-4"><a></a>  <span class="fu">summarise</span>(</span>
+<span id="cb3-5"><a></a>    <span class="at">tension_moyenne =</span> <span class="fu">mean</span>(tension),</span>
+<span id="cb3-6"><a></a>    <span class="at">n_patients =</span> <span class="fu">n</span>()</span>
+<span id="cb3-7"><a></a>  )</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+<p><br></p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Le principe clé</strong></p>
+</div>
+<div class="callout-content">
+<p>Vous apprenez la logique <strong>une fois</strong>, puis vous l’appliquez à tous vos projets. Pas besoin de tout réapprendre à chaque nouvelle analyse.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="exemple-2-données-qualitatives" class="slide level2 smaller">
+<h2>Exemple 2 : Données qualitatives</h2>
+<p><strong>Situation :</strong> Vous avez 30 entretiens semi-dirigés à analyser.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Approche traditionnelle :</strong></p>
+<ul>
+<li>Lire chaque entretien plusieurs fois</li>
+<li>Surligner manuellement les passages</li>
+<li>Compter les occurrences à la main</li>
+<li>Difficile de repérer des patterns subtils</li>
+<li>Très chronophage</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Avec R :</strong></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># Trouver tous les passages sur un thème</span></span>
+<span id="cb4-2"><a></a>entretiens <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(texte,</span>
+<span id="cb4-4"><a></a>    <span class="st">"stress|anxiété|pression"</span>))</span>
+<span id="cb4-5"><a></a></span>
+<span id="cb4-6"><a></a><span class="co"># Compter les thèmes par participant</span></span>
+<span id="cb4-7"><a></a>entretiens <span class="sc">%&gt;%</span></span>
+<span id="cb4-8"><a></a>  <span class="fu">group_by</span>(participant) <span class="sc">%&gt;%</span></span>
+<span id="cb4-9"><a></a>  <span class="fu">summarise</span>(</span>
+<span id="cb4-10"><a></a>    <span class="at">nb_stress =</span> <span class="fu">sum</span>(<span class="fu">str_detect</span>(texte, <span class="st">"stress"</span>)),</span>
+<span id="cb4-11"><a></a>    <span class="at">nb_positif =</span> <span class="fu">sum</span>(<span class="fu">str_detect</span>(texte, <span class="st">"satisf"</span>))</span>
+<span id="cb4-12"><a></a>  )</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+</section>
+<section id="exemple-2-analyse-de-contenu-avec-r" class="slide level2 smaller">
+<h2>Exemple 2 : Analyse de contenu avec R</h2>
+<p><strong>R peut aller beaucoup plus loin dans l’analyse qualitative</strong></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="co"># Exemple : Extraire les mots les plus fréquents par thème</span></span>
+<span id="cb5-2"><a></a>entretiens <span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a></a>  <span class="fu">unnest_tokens</span>(mot, texte) <span class="sc">%&gt;%</span>           <span class="co"># Séparer chaque mot</span></span>
+<span id="cb5-4"><a></a>  <span class="fu">anti_join</span>(mots_vides_fr) <span class="sc">%&gt;%</span>            <span class="co"># Retirer "le", "la", "de"...</span></span>
+<span id="cb5-5"><a></a>  <span class="fu">count</span>(theme, mot, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span>      <span class="co"># Compter par thème</span></span>
+<span id="cb5-6"><a></a>  <span class="fu">group_by</span>(theme) <span class="sc">%&gt;%</span></span>
+<span id="cb5-7"><a></a>  <span class="fu">top_n</span>(<span class="dv">10</span>)                               <span class="co"># Garder le top 10</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Ce que R permet en analyse qualitative</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Analyse de sentiment automatisée</li>
+<li>Détection de cooccurrences (quels mots apparaissent ensemble?)</li>
+<li>Visualisation des thèmes et de leurs relations</li>
+<li>Classification automatique de segments de texte</li>
+<li><strong>Tout en gardant la possibilité de retourner au texte original</strong></li>
+</ul>
+</div>
+</div>
+</div>
 </section>
 <section id="pourquoi-r-en-sciences-sociales" class="slide level2 smaller" data-background-color="#2C5F77">
 <h2>Pourquoi R en sciences sociales ?</h2>
@@ -543,32 +666,6 @@
 </div>
 <div class="callout-content">
 <p>Cliquez sur l’image pour voir l’<a href="https://nz-stefan.shinyapps.io/commute-explorer-2/">application en action</a></p>
-</div>
-</div>
-</div>
-</section>
-<section id="applications-shiny-possibilités-infinies" class="slide level2 smaller" data-background-color="#5B4E77">
-<h2>Applications Shiny : possibilités infinies</h2>
-<div style="color: white;">
-<p><strong>Transformez vos analyses en outils accessibles</strong> <strong>Exemples d’utilisation :</strong></p>
-<ul>
-<li>Tableaux de bord de suivi</li>
-<li>Explorateurs de données interactifs</li>
-<li>Outils de collecte de données</li>
-<li>Simulateurs et calculateurs</li>
-<li>Rapports personnalisés</li>
-</ul>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p>Aucune connaissance en développement web nécessaire</p>
-</div>
 </div>
 </div>
 </div>
@@ -824,20 +921,20 @@
 </div>
 </div>
 <div class="cell" data-code-copy="true">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># Opérations de base</span></span>
-<span id="cb1-2"><a></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co"># Opérations de base</span></span>
+<span id="cb6-2"><a></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="dv">10</span> <span class="sc">*</span> <span class="dv">5</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="dv">10</span> <span class="sc">*</span> <span class="dv">5</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 50</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="dv">15</span> <span class="sc">/</span> <span class="dv">3</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="dv">15</span> <span class="sc">/</span> <span class="dv">3</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">sqrt</span>(<span class="dv">16</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">sqrt</span>(<span class="dv">16</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4</code></pre>
 </div>
@@ -847,22 +944,22 @@
 <h2>Créer des objets</h2>
 <p>En R, on sauvegarde tout dans des <strong>objets</strong> avec <code>&lt;-</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="co"># Créer des objets simples</span></span>
-<span id="cb9-2"><a></a>film_prefere <span class="ot">&lt;-</span> <span class="st">"Dune"</span></span>
-<span id="cb9-3"><a></a>annee_sortie <span class="ot">&lt;-</span> <span class="dv">2021</span></span>
-<span id="cb9-4"><a></a>note_imdb <span class="ot">&lt;-</span> <span class="fl">8.0</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="co"># Créer des objets simples</span></span>
+<span id="cb14-2"><a></a>film_prefere <span class="ot">&lt;-</span> <span class="st">"Dune"</span></span>
+<span id="cb14-3"><a></a>annee_sortie <span class="ot">&lt;-</span> <span class="dv">2021</span></span>
+<span id="cb14-4"><a></a>note_imdb <span class="ot">&lt;-</span> <span class="fl">8.0</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="co"># Voir le contenu des objets</span></span>
-<span id="cb10-2"><a></a>film_prefere</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="co"># Voir le contenu des objets</span></span>
+<span id="cb15-2"><a></a>film_prefere</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Dune"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>annee_sortie</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>annee_sortie</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2021</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>note_imdb</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>note_imdb</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 8</code></pre>
 </div>
@@ -907,19 +1004,19 @@
 <section id="exemple-un-graphique-avec-ggplot2" class="slide level2 smaller">
 <h2>Exemple : un graphique avec ggplot2</h2>
 <div class="cell" data-layout-align="center" data-code-copy="true">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb16-2"><a></a></span>
-<span id="cb16-3"><a></a><span class="co"># Données exemple</span></span>
-<span id="cb16-4"><a></a>donnees <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb16-5"><a></a>  <span class="at">categorie =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>),</span>
-<span id="cb16-6"><a></a>  <span class="at">valeur =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">40</span>, <span class="dv">15</span>, <span class="dv">20</span>)</span>
-<span id="cb16-7"><a></a>)</span>
-<span id="cb16-8"><a></a></span>
-<span id="cb16-9"><a></a><span class="co"># Graphique</span></span>
-<span id="cb16-10"><a></a><span class="fu">ggplot</span>(donnees, <span class="fu">aes</span>(<span class="at">x =</span> categorie, <span class="at">y =</span> valeur, <span class="at">fill =</span> categorie)) <span class="sc">+</span></span>
-<span id="cb16-11"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb16-12"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Exemple de graphique avec R"</span>) <span class="sc">+</span></span>
-<span id="cb16-13"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb21-2"><a></a></span>
+<span id="cb21-3"><a></a><span class="co"># Données exemple</span></span>
+<span id="cb21-4"><a></a>donnees <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb21-5"><a></a>  <span class="at">categorie =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>),</span>
+<span id="cb21-6"><a></a>  <span class="at">valeur =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">40</span>, <span class="dv">15</span>, <span class="dv">20</span>)</span>
+<span id="cb21-7"><a></a>)</span>
+<span id="cb21-8"><a></a></span>
+<span id="cb21-9"><a></a><span class="co"># Graphique</span></span>
+<span id="cb21-10"><a></a><span class="fu">ggplot</span>(donnees, <span class="fu">aes</span>(<span class="at">x =</span> categorie, <span class="at">y =</span> valeur, <span class="at">fill =</span> categorie)) <span class="sc">+</span></span>
+<span id="cb21-11"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb21-12"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Exemple de graphique avec R"</span>) <span class="sc">+</span></span>
+<span id="cb21-13"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="slides_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>

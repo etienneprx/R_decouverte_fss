@@ -105,6 +105,34 @@
     "text": "Qu’est-ce que R ?\n\n\nR c’est :\n\nUn langage de programmation pour l’analyse de données\nGratuit et open-source\nUne communauté active mondiale\nPlus de 21,000 packages spécialisés\n\n\nPourquoi l’utiliser ?\n\nAdapté aux sciences sociales\nAnalyses reproductibles et transparentes\nVisualisations de qualité professionnelle\nCompétence recherchée en recherche et industrie\n\n\n\n\nR est un langage de programmation statistique, pas juste un logiciel avec des menus."
   },
   {
+    "objectID": "slides.html#exemple-1-données-quantitatives",
+    "href": "slides.html#exemple-1-données-quantitatives",
+    "title": "Découverte du langage de programmation R",
+    "section": "Exemple 1 : Données quantitatives",
+    "text": "Exemple 1 : Données quantitatives\nSituation : Vous avez un sondage de 5,000 répondants avec 50 variables.\n\n\nDans Excel :\n\nTrier manuellement les colonnes\nCréer des formules pour chaque calcul\nCopier-coller pour chaque sous-groupe\nRefaire tout si les données changent\nRisque d’erreurs à chaque étape\n\n\nAvec R :\n# En 3 lignes, on obtient :\ndonnees %&gt;%\n  group_by(region, age_groupe) %&gt;%\n  summarise(moyenne = mean(score),\n            ecart_type = sd(score),\n            n = n())\n\nRésultats instantanés pour tous les groupes\nReproductible : relancer = mêmes résultats\nDonnées mises à jour? On relance le code."
+  },
+  {
+    "objectID": "slides.html#exemple-1-la-puissance-du-code",
+    "href": "slides.html#exemple-1-la-puissance-du-code",
+    "title": "Découverte du langage de programmation R",
+    "section": "Exemple 1 : La puissance du code",
+    "text": "Exemple 1 : La puissance du code\nLe même code s’adapte à n’importe quel jeu de données\n\n\n# Aujourd'hui : sondage électoral\nsondage %&gt;%\n  group_by(region) %&gt;%\n  summarise(\n    intention_PLC = mean(vote_lib),\n    intention_PCC = mean(vote_cons)\n  )\n\n# Demain : données de santé\npatients %&gt;%\n  group_by(groupe_age) %&gt;%\n  summarise(\n    tension_moyenne = mean(tension),\n    n_patients = n()\n  )\n\n\n\n\n\n\n\n\nLe principe clé\n\n\nVous apprenez la logique une fois, puis vous l’appliquez à tous vos projets. Pas besoin de tout réapprendre à chaque nouvelle analyse."
+  },
+  {
+    "objectID": "slides.html#exemple-2-données-qualitatives",
+    "href": "slides.html#exemple-2-données-qualitatives",
+    "title": "Découverte du langage de programmation R",
+    "section": "Exemple 2 : Données qualitatives",
+    "text": "Exemple 2 : Données qualitatives\nSituation : Vous avez 30 entretiens semi-dirigés à analyser.\n\n\nApproche traditionnelle :\n\nLire chaque entretien plusieurs fois\nSurligner manuellement les passages\nCompter les occurrences à la main\nDifficile de repérer des patterns subtils\nTrès chronophage\n\n\nAvec R :\n# Trouver tous les passages sur un thème\nentretiens %&gt;%\n  filter(str_detect(texte,\n    \"stress|anxiété|pression\"))\n\n# Compter les thèmes par participant\nentretiens %&gt;%\n  group_by(participant) %&gt;%\n  summarise(\n    nb_stress = sum(str_detect(texte, \"stress\")),\n    nb_positif = sum(str_detect(texte, \"satisf\"))\n  )"
+  },
+  {
+    "objectID": "slides.html#exemple-2-analyse-de-contenu-avec-r",
+    "href": "slides.html#exemple-2-analyse-de-contenu-avec-r",
+    "title": "Découverte du langage de programmation R",
+    "section": "Exemple 2 : Analyse de contenu avec R",
+    "text": "Exemple 2 : Analyse de contenu avec R\nR peut aller beaucoup plus loin dans l’analyse qualitative\n# Exemple : Extraire les mots les plus fréquents par thème\nentretiens %&gt;%\n  unnest_tokens(mot, texte) %&gt;%           # Séparer chaque mot\n  anti_join(mots_vides_fr) %&gt;%            # Retirer \"le\", \"la\", \"de\"...\n  count(theme, mot, sort = TRUE) %&gt;%      # Compter par thème\n  group_by(theme) %&gt;%\n  top_n(10)                               # Garder le top 10\n\n\n\n\n\n\nCe que R permet en analyse qualitative\n\n\n\nAnalyse de sentiment automatisée\nDétection de cooccurrences (quels mots apparaissent ensemble?)\nVisualisation des thèmes et de leurs relations\nClassification automatique de segments de texte\nTout en gardant la possibilité de retourner au texte original"
+  },
+  {
     "objectID": "slides.html#pourquoi-r-en-sciences-sociales",
     "href": "slides.html#pourquoi-r-en-sciences-sociales",
     "title": "Découverte du langage de programmation R",
@@ -131,13 +159,6 @@
     "title": "Découverte du langage de programmation R",
     "section": "Applications web interactives avec Shiny",
     "text": "Applications web interactives avec Shiny\n\nExplorez vos données de manière interactive\n\n\n\n\n\n\n\n\nAstuce\n\n\nCliquez sur l’image pour voir l’application en action"
-  },
-  {
-    "objectID": "slides.html#applications-shiny-possibilités-infinies",
-    "href": "slides.html#applications-shiny-possibilités-infinies",
-    "title": "Découverte du langage de programmation R",
-    "section": "Applications Shiny : possibilités infinies",
-    "text": "Applications Shiny : possibilités infinies\n\nTransformez vos analyses en outils accessibles Exemples d’utilisation :\n\nTableaux de bord de suivi\nExplorateurs de données interactifs\nOutils de collecte de données\nSimulateurs et calculateurs\nRapports personnalisés\n\n\n\n\n\n\n\nNote\n\n\nAucune connaissance en développement web nécessaire"
   },
   {
     "objectID": "slides.html#et-après-r",
